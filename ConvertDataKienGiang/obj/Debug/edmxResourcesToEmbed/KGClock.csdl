@@ -1,0 +1,1647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KG_ClockRecordModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="t_Accountant_Files">
+    <Key>
+      <PropertyRef Name="FileName" />
+    </Key>
+    <Property Name="FileName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Extension" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Size" Type="Double" />
+    <Property Name="UploadDate" Type="DateTime" Precision="3" />
+    <Property Name="UploadBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ProjectId" Type="Int64" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_Accreditation_Types">
+    <Key>
+      <PropertyRef Name="Type" />
+    </Key>
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="t_Accreditations" Relationship="Self.FK_t_Accreditations_t_Accreditation_Types" FromRole="t_Accreditation_Types" ToRole="t_Accreditations" />
+  </EntityType>
+  <EntityType Name="t_Accreditations">
+    <Key>
+      <PropertyRef Name="AccreditationDocument" />
+    </Key>
+    <Property Name="AccreditationDocument" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MeterSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TransmitterSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccreditationType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccreditationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="IsPass" Type="Boolean" />
+    <Property Name="IsConfirm" Type="Boolean" />
+    <Property Name="ConfirmDay" Type="DateTime" Precision="3" />
+    <Property Name="ConfirmBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="t_Accreditation_Types" Relationship="Self.FK_t_Accreditations_t_Accreditation_Types" FromRole="t_Accreditations" ToRole="t_Accreditation_Types" />
+    <NavigationProperty Name="t_Meters" Relationship="Self.FK_t_Accreditations_t_Meters" FromRole="t_Accreditations" ToRole="t_Meters" />
+    <NavigationProperty Name="t_Transmitters" Relationship="Self.FK_t_Accreditations_t_Transmitters" FromRole="t_Accreditations" ToRole="t_Transmitters" />
+  </EntityType>
+  <EntityType Name="t_Alarm_Configurations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNr2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNr3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Ena1" Type="Boolean" />
+    <Property Name="Ena2" Type="Boolean" />
+    <Property Name="Ena3" Type="Boolean" />
+    <Property Name="Ena4" Type="Boolean" />
+    <Property Name="Ena" Type="Boolean" />
+    <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_Alarm_Warning">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ChannelId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RangeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Lower" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Upper" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Notes" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="t_Alarms">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SiteName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ChannelId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChannelName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Timestamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Msg1" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Msg2" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Msg3" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Msg4" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Trigger" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="t_BillingHistory">
+    <Key>
+      <PropertyRef Name="SO_REF" />
+      <PropertyRef Name="SO_LINE" />
+    </Key>
+    <Property Name="BookName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Period" Type="DateTime" Precision="3" />
+    <Property Name="ref_count" Type="Int32" />
+    <Property Name="SO_REF" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SO_LINE" Type="Int32" Nullable="false" />
+    <Property Name="SO_DATE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SERI_OF_WATER_METER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CUS_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ITEM_CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CUS_CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PROJECT_PHASE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="UNIT_CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TAX_CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION_VN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPTION_EN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FIRST_INDEX" Type="Double" />
+    <Property Name="LAST_INDEX" Type="Double" />
+    <Property Name="QUANTITY" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="UNIT_PRICE" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="CURRENCY" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="TYGIA" Type="Decimal" Precision="18" Scale="3" />
+    <Property Name="DU_PHONG_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DU_PHONG_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DU_PHONG_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DU_PHONG_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DU_PHONG_6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DU_PHONG_7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DU_PHONG_8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DU_PHONG_9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DU_PHONG_10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_Books">
+    <Key>
+      <PropertyRef Name="BookId" />
+    </Key>
+    <Property Name="BookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ConfirmDay" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Disable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="t_Channel_Configurations">
+    <Key>
+      <PropertyRef Name="ChannelId" />
+    </Key>
+    <Property Name="ChannelId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LoggerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChannelName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Pressure1" Type="Boolean" />
+    <Property Name="Pressure2" Type="Boolean" />
+    <Property Name="ForwardFlow" Type="Boolean" />
+    <Property Name="ReverseFlow" Type="Boolean" />
+    <Property Name="TimeStamp" Type="DateTime" Precision="3" />
+    <Property Name="LastValue" Type="Double" />
+    <Property Name="IndexTimeStamp" Type="DateTime" Precision="3" />
+    <Property Name="LastIndex" Type="Double" />
+    <Property Name="DisplayOnLabel" Type="Boolean" />
+    <Property Name="ChannelOther" Type="Boolean" />
+    <Property Name="basemin" Type="Double" />
+    <Property Name="basemax" Type="Double" />
+    <NavigationProperty Name="t_Logger_Configurations" Relationship="Self.FK_t_Channel_Configurations_t_Logger_Configurations" FromRole="t_Channel_Configurations" ToRole="t_Logger_Configurations" />
+  </EntityType>
+  <EntityType Name="t_Consumers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="ConsumerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Zoom" Type="Byte" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="SetDefault" Type="Int32" />
+    <Property Name="Acronym" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Contact" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Career" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DMA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="t_Currency">
+    <Key>
+      <PropertyRef Name="CurrencyCode" />
+    </Key>
+    <Property Name="CurrencyCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CashCost" Type="Double" />
+    <Property Name="TransferCost" Type="Double" />
+    <Property Name="SaleCost" Type="Double" />
+  </EntityType>
+  <EntityType Name="t_Data_Complexes">
+    <Key>
+      <PropertyRef Name="LoggerId" />
+      <PropertyRef Name="TimeStamp" />
+    </Key>
+    <Property Name="LoggerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ForwardFlow" Type="Double" />
+    <Property Name="ReverseFlow" Type="Double" />
+    <Property Name="ForwardIndex" Type="Double" />
+    <Property Name="ReverseIndex" Type="Double" />
+    <Property Name="Pressure1" Type="Double" />
+    <Property Name="Pressure2" Type="Double" />
+    <Property Name="MinForwardFlow" Type="Double" />
+    <Property Name="MaxForwardFlow" Type="Double" />
+    <Property Name="MinReverseFlow" Type="Double" />
+    <Property Name="MaxReverseFlow" Type="Double" />
+    <Property Name="MinPressure1" Type="Double" />
+    <Property Name="MaxPressure1" Type="Double" />
+    <Property Name="MinPressure2" Type="Double" />
+    <Property Name="MaxPressure2" Type="Double" />
+    <NavigationProperty Name="t_Logger_Configurations" Relationship="Self.FK_t_Data_Complexes_t_Logger_Configurations" FromRole="t_Data_Complexes" ToRole="t_Logger_Configurations" />
+  </EntityType>
+  <EntityType Name="t_DisplayGroups">
+    <Key>
+      <PropertyRef Name="Group" />
+    </Key>
+    <Property Name="Group" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="t_Sites" Relationship="Self.FK_t_Sites_t_DisplayGroups1" FromRole="t_DisplayGroups" ToRole="t_Sites" />
+  </EntityType>
+  <EntityType Name="t_Emails">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_Function">
+    <Key>
+      <PropertyRef Name="FunctionId" />
+    </Key>
+    <Property Name="FunctionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FunctionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="IsOnMenu" Type="Boolean" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="Sort" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_Language">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="LangCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Noted" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_LanguageTranslate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ControlId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Contents" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Noted" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_Logger_Configurations">
+    <Key>
+      <PropertyRef Name="LoggerId" />
+    </Key>
+    <Property Name="LoggerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SiteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StartHour" Type="Byte" />
+    <Property Name="TelephoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pressure1" Type="Byte" />
+    <Property Name="Pressure2" Type="Byte" />
+    <Property Name="ForwardFlow" Type="Byte" />
+    <Property Name="ReverseFlow" Type="Byte" />
+    <Property Name="Alarm" Type="Boolean" />
+    <Property Name="TimeDelayAlarm" Type="Int32" />
+    <Property Name="Interval" Type="Byte" />
+    <Property Name="Status1" Type="Boolean" />
+    <Property Name="Status2" Type="Boolean" />
+    <Property Name="TimeOffset" Type="Int32" />
+    <Property Name="ChannelOther" Type="Byte" />
+    <NavigationProperty Name="t_Channel_Configurations" Relationship="Self.FK_t_Channel_Configurations_t_Logger_Configurations" FromRole="t_Logger_Configurations" ToRole="t_Channel_Configurations" />
+    <NavigationProperty Name="t_Data_Complexes" Relationship="Self.FK_t_Data_Complexes_t_Logger_Configurations" FromRole="t_Logger_Configurations" ToRole="t_Data_Complexes" />
+    <NavigationProperty Name="t_Sites" Relationship="Self.FK_t_Sites_t_Logger_Configurations" FromRole="t_Logger_Configurations" ToRole="t_Sites" />
+  </EntityType>
+  <EntityType Name="t_Logger_Files">
+    <Key>
+      <PropertyRef Name="FileID" />
+    </Key>
+    <Property Name="FileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileName" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoggerSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MIMEType" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="Size" Type="Int32" />
+    <Property Name="Path" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="UploadDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="t_Loggers" Relationship="Self.FK_t_Logger_Files_t_Loggers" FromRole="t_Logger_Files" ToRole="t_Loggers" />
+  </EntityType>
+  <EntityType Name="t_Logger_Histories">
+    <Key>
+      <PropertyRef Name="HistoryID" />
+    </Key>
+    <Property Name="HistoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateChanged" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OldLoggerSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NewLoggerSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Index" Type="Double" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="t_Loggers" Relationship="Self.FK_t_Logger_Histories_t_Loggers2" FromRole="t_Logger_Histories" ToRole="t_Loggers" />
+    <NavigationProperty Name="t_Sites" Relationship="Self.FK_t_Logger_Histories_t_Sites" FromRole="t_Logger_Histories" ToRole="t_Sites" />
+  </EntityType>
+  <EntityType Name="t_Loggers">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ReceiptDate" Type="DateTime" Precision="3" />
+    <Property Name="Provider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Marks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Installed" Type="Boolean" />
+    <NavigationProperty Name="t_Logger_Files" Relationship="Self.FK_t_Logger_Files_t_Loggers" FromRole="t_Loggers" ToRole="t_Logger_Files" />
+    <NavigationProperty Name="t_Logger_Histories" Relationship="Self.FK_t_Logger_Histories_t_Loggers2" FromRole="t_Loggers" ToRole="t_Logger_Histories" />
+    <NavigationProperty Name="t_Sites" Relationship="Self.FK_t_Sites_t_Loggers" FromRole="t_Loggers" ToRole="t_Sites" />
+  </EntityType>
+  <EntityType Name="t_Manual_Phumy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TimeStamp" Type="DateTime" Precision="3" />
+    <Property Name="Anh_Vy_D200" Type="Double" />
+    <Property Name="Chau_Duc_D600" Type="Double" />
+    <Property Name="Chau_Duc_D800" Type="Double" />
+    <Property Name="China_Steel" Type="Double" />
+    <Property Name="DHK_Chau_Duc" Type="Double" />
+    <Property Name="DHK_Ngoai_KCN" Type="Double" />
+    <Property Name="DHK_Toc_Tien" Type="Double" />
+    <Property Name="DHK_TT_Cap_PM1" Type="Double" />
+    <Property Name="KCN_B1_Tien_Hung" Type="Double" />
+    <Property Name="KCN_Go_Dau_DN300" Type="Double" />
+    <Property Name="KCN_MXA_2_1_DN300" Type="Double" />
+    <Property Name="KCN_MXA_2_2_DN200" Type="Double" />
+    <Property Name="KCN_MXA_DN300" Type="Double" />
+    <Property Name="KCN_MXA_DN300_2" Type="Double" />
+    <Property Name="KCN_Phu_My_3" Type="Double" />
+    <Property Name="KCN_Phu_My_I_DN300_1" Type="Double" />
+    <Property Name="KCN_Phu_My_I_DN300_2" Type="Double" />
+    <Property Name="KCN_Phu_My_I_DN300_3" Type="Double" />
+    <Property Name="Long_Son" Type="Double" />
+    <Property Name="NM_Giay_MX" Type="Double" />
+    <Property Name="POSCO_DN400" Type="Double" />
+    <Property Name="POSCO_SS" Type="Double" />
+    <Property Name="TDC_44HA" Type="Double" />
+    <Property Name="TTXH_D200_1" Type="Double" />
+    <Property Name="TTXH_D200_2" Type="Double" />
+    <Property Name="TTXH_D50" Type="Double" />
+    <Property Name="Tuyen_Duoi_D400" Type="Double" />
+    <Property Name="Tuyen_tren_D400" Type="Double" />
+  </EntityType>
+  <EntityType Name="t_Meter_Files">
+    <Key>
+      <PropertyRef Name="FileID" />
+    </Key>
+    <Property Name="FileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileName" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MeterSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MIMEType" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="Size" Type="Int32" />
+    <Property Name="Path" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="UploadDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="t_Meters" Relationship="Self.FK_t_Meter_Files_t_Meters" FromRole="t_Meter_Files" ToRole="t_Meters" />
+  </EntityType>
+  <EntityType Name="t_Meter_Histories">
+    <Key>
+      <PropertyRef Name="HistoryID" />
+    </Key>
+    <Property Name="HistoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SiteID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateChanged" Type="DateTime" Precision="3" />
+    <Property Name="OldMeterSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OldAccreditation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OldIndex" Type="Double" />
+    <Property Name="LastProduction" Type="Double" />
+    <Property Name="NewMeterSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NewAccreditation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NewIndex" Type="Double" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="t_Meters" Relationship="Self.FK_t_Meter_Histories_t_Meters2" FromRole="t_Meter_Histories" ToRole="t_Meters" />
+  </EntityType>
+  <EntityType Name="t_Meters">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MeterType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ReceiptDate" Type="DateTime" Precision="3" />
+    <Property Name="Provider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Marks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Size" Type="Int16" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Installed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AccreditationDocument" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovalDecision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Approved" Type="Boolean" />
+    <Property Name="MaxIndex" Type="Int32" />
+    <Property Name="AttachTransmitter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttachLogger" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="t_Accreditations" Relationship="Self.FK_t_Accreditations_t_Meters" FromRole="t_Meters" ToRole="t_Accreditations" />
+    <NavigationProperty Name="t_Meter_Files" Relationship="Self.FK_t_Meter_Files_t_Meters" FromRole="t_Meters" ToRole="t_Meter_Files" />
+    <NavigationProperty Name="t_Meter_Histories" Relationship="Self.FK_t_Meter_Histories_t_Meters2" FromRole="t_Meters" ToRole="t_Meter_Histories" />
+    <NavigationProperty Name="t_Sites" Relationship="Self.FK_t_Sites_t_Meters" FromRole="t_Meters" ToRole="t_Sites" />
+  </EntityType>
+  <EntityType Name="t_MeterSetupHistories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MeterSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SiteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Site" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ConsumerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Consumer" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Action" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_Project_Manage">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConsumerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SiteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DisplayGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OldMeterSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NewMeterSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StaffId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeAssign" Type="DateTime" Precision="3" />
+    <Property Name="TimeExpected" Type="DateTime" Precision="3" />
+    <Property Name="ProjectType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeCompleted" Type="DateTime" Precision="3" />
+    <Property Name="UnitCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="RegisProduction" Type="Double" />
+  </EntityType>
+  <EntityType Name="t_Reading">
+    <Key>
+      <PropertyRef Name="SiteId" />
+      <PropertyRef Name="Period" />
+    </Key>
+    <Property Name="SiteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Index" Type="Double" />
+    <Property Name="Period" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_RoleFunction">
+    <Key>
+      <PropertyRef Name="Role" />
+      <PropertyRef Name="FunctionId" />
+    </Key>
+    <Property Name="Role" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FunctionId" Type="Int32" Nullable="false" />
+    <Property Name="Active" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="t_Roles">
+    <Key>
+      <PropertyRef Name="Role" />
+    </Key>
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="t_Users" Relationship="Self.FK_t_Users_t_Roles1" FromRole="t_Roles" ToRole="t_Users" />
+  </EntityType>
+  <EntityType Name="t_Site_Files">
+    <Key>
+      <PropertyRef Name="FileID" />
+    </Key>
+    <Property Name="FileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileName" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SiteID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MIMEType" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="Size" Type="Int32" />
+    <Property Name="Path" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="UploadDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="t_Sites" Relationship="Self.FK_t_Site_Files_t_Sites" FromRole="t_Site_Files" ToRole="t_Sites" />
+  </EntityType>
+  <EntityType Name="t_Sites">
+    <Key>
+      <PropertyRef Name="SiteId" />
+    </Key>
+    <Property Name="SiteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SiteAliasName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="Double" />
+    <Property Name="Longitude" Type="Double" />
+    <Property Name="DisplayGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Zoom" Type="Byte" />
+    <Property Name="ConsumerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LoggerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StartDay" Type="Byte" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="MeterSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TransmitterSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LoggerSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MeterDateChanged" Type="DateTime" Precision="3" />
+    <Property Name="TransmitterDateChanged" Type="DateTime" Precision="3" />
+    <Property Name="LoggerDateChanged" Type="DateTime" Precision="3" />
+    <Property Name="Availability" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Staffs" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LabelAnchorX" Type="Int32" />
+    <Property Name="LabelAnchorY" Type="Int32" />
+    <Property Name="LabelLat" Type="Double" />
+    <Property Name="LabelLng" Type="Double" />
+    <Property Name="PipeSize" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SetDelayTime" Type="Int32" />
+    <Property Name="SetDiffValue" Type="Double" />
+    <Property Name="Baseline" Type="Double" />
+    <Property Name="Using" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WastePercent" Type="Double" />
+    <Property Name="UnitCost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SewUnitCost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UnitCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhaseCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TaxCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SewTaxCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="RouteId" Type="Int32" />
+    <Property Name="BookId" Type="Int32" />
+    <Property Name="Disable" Type="Int32" Nullable="false" />
+    <Property Name="FirstIndex" Type="Int64" />
+    <Property Name="OpenDate" Type="DateTime" Precision="3" />
+    <Property Name="CloseDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="t_DisplayGroups" Relationship="Self.FK_t_Sites_t_DisplayGroups1" FromRole="t_Sites" ToRole="t_DisplayGroups" />
+    <NavigationProperty Name="t_Logger_Configurations" Relationship="Self.FK_t_Sites_t_Logger_Configurations" FromRole="t_Sites" ToRole="t_Logger_Configurations" />
+    <NavigationProperty Name="t_Logger_Histories" Relationship="Self.FK_t_Logger_Histories_t_Sites" FromRole="t_Sites" ToRole="t_Logger_Histories" />
+    <NavigationProperty Name="t_Loggers" Relationship="Self.FK_t_Sites_t_Loggers" FromRole="t_Sites" ToRole="t_Loggers" />
+    <NavigationProperty Name="t_Meters" Relationship="Self.FK_t_Sites_t_Meters" FromRole="t_Sites" ToRole="t_Meters" />
+    <NavigationProperty Name="t_Site_Files" Relationship="Self.FK_t_Site_Files_t_Sites" FromRole="t_Sites" ToRole="t_Site_Files" />
+    <NavigationProperty Name="t_Transmitters" Relationship="Self.FK_t_Sites_t_Transmitters" FromRole="t_Sites" ToRole="t_Transmitters" />
+  </EntityType>
+  <EntityType Name="t_SiteSetupHistories">
+    <Key>
+      <PropertyRef Name="SiteId" />
+      <PropertyRef Name="Action" />
+      <PropertyRef Name="TimeStamp" />
+    </Key>
+    <Property Name="SiteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Site" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ConsumerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Consumer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Action" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_Staffs">
+    <Key>
+      <PropertyRef Name="StaffId" />
+    </Key>
+    <Property Name="StaffId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="TelephoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sites" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="t_Users" Relationship="Self.FK_t_Users_t_Staffs" FromRole="t_Staffs" ToRole="t_Users" />
+  </EntityType>
+  <EntityType Name="t_SysParam">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Val" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Val2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsSystem" Type="Boolean" />
+    <Property Name="Activated" Type="Boolean" Nullable="false" />
+    <Property Name="LanguageId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_TaxCode">
+    <Key>
+      <PropertyRef Name="TaxCode" />
+    </Key>
+    <Property Name="TaxCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_Transmitter_Histories">
+    <Key>
+      <PropertyRef Name="HistoryID" />
+    </Key>
+    <Property Name="HistoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateChanged" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OldTransmitterSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OldAccreditation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NewTransmitterSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NewAccreditation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Index" Type="Double" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="t_Transmitters" Relationship="Self.FK_t_Transmitter_Histories_t_Transmitters" FromRole="t_Transmitter_Histories" ToRole="t_Transmitters" />
+  </EntityType>
+  <EntityType Name="t_Transmitters">
+    <Key>
+      <PropertyRef Name="Serial" />
+    </Key>
+    <Property Name="Serial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ReceiptDate" Type="DateTime" Precision="3" />
+    <Property Name="Provider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Marks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Size" Type="Int16" />
+    <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Installed" Type="Boolean" />
+    <Property Name="AccreditationDocument" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovalDecision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="Approved" Type="Boolean" />
+    <NavigationProperty Name="t_Accreditations" Relationship="Self.FK_t_Accreditations_t_Transmitters" FromRole="t_Transmitters" ToRole="t_Accreditations" />
+    <NavigationProperty Name="t_Sites" Relationship="Self.FK_t_Sites_t_Transmitters" FromRole="t_Transmitters" ToRole="t_Sites" />
+    <NavigationProperty Name="t_Transmitter_Histories" Relationship="Self.FK_t_Transmitter_Histories_t_Transmitters" FromRole="t_Transmitters" ToRole="t_Transmitter_Histories" />
+  </EntityType>
+  <EntityType Name="t_UnitCode">
+    <Key>
+      <PropertyRef Name="UnitCode" />
+    </Key>
+    <Property Name="UnitCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ConsumerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Threshold" Type="Double" />
+    <Property Name="OverloadUnitCost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ComplexStringWTR" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="ComplexStringSEW" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="IsSeparateInvoice" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="t_UnitCost">
+    <Key>
+      <PropertyRef Name="UnitCost" />
+    </Key>
+    <Property Name="UnitCost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cost" Type="Double" />
+  </EntityType>
+  <EntityType Name="t_Units">
+    <Key>
+      <PropertyRef Name="Unit" />
+    </Key>
+    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_Users">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Salt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StaffId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ConsumerId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DisplayGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="TimeStamp" Type="DateTime" Precision="3" />
+    <Property Name="Ip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LoginTime" Type="Int32" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="t_Roles" Relationship="Self.FK_t_Users_t_Roles1" FromRole="t_Users" ToRole="t_Roles" />
+    <NavigationProperty Name="t_Staffs" Relationship="Self.FK_t_Users_t_Staffs" FromRole="t_Users" ToRole="t_Staffs" />
+  </EntityType>
+  <EntityType Name="t_UsingDiary">
+    <Key>
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="FunctionName" />
+      <PropertyRef Name="TimeStamp" />
+    </Key>
+    <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FunctionName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="t_WasteWaterPercent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WastePercent" Type="Double" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_ClockRecord">
+    <Key>
+      <PropertyRef Name="ClockRecordID" />
+    </Key>
+    <Property Name="ClockRecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContractID" Type="Int64" Nullable="false" />
+    <Property Name="RouteID" Type="Int32" Nullable="false" />
+    <Property Name="Period" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FirstNumber" Type="Int64" />
+    <Property Name="LastNumber" Type="Int64" />
+    <Property Name="FirstDate" Type="DateTime" Precision="0" />
+    <Property Name="LastDate" Type="DateTime" Precision="0" />
+    <Property Name="UsageNumber" Type="Int64" />
+    <Property Name="ArrearsQuantity" Type="Double" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="0" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RecordTime" Type="DateTime" Precision="3" />
+    <Property Name="InputTime" Type="Int32" />
+    <Property Name="Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="User_Input" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastNumber_Mobile" Type="Int64" />
+    <Property Name="StatusCode_Mobile" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LastFirstStatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastFirstUsageNumber" Type="Int64" />
+    <Property Name="LastSecondStatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastSecondUsageNumber" Type="Int64" />
+    <Property Name="LastThirdStatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastThirdUsageNumber" Type="Int64" />
+    <Property Name="AvgUseNumber" Type="Int64" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="StatusLockBook" Type="Int16" />
+    <Property Name="ImageSource" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ImageName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LockedStatus" Type="Boolean" />
+    <Property Name="BookId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_ClockRecord_History">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Period" Type="DateTime" Precision="0" />
+    <Property Name="ContractID" Type="Int64" />
+    <Property Name="RouteID" Type="Int32" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LastNumber" Type="Int64" />
+    <Property Name="RecordTime" Type="DateTime" Precision="3" />
+    <Property Name="InputTime" Type="Int32" />
+    <Property Name="Notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="User_Input" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="Lat" Type="Double" />
+  </EntityType>
+  <EntityType Name="tbl_ClockRecord_Mobile">
+    <Key>
+      <PropertyRef Name="Period" />
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="Period" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ContractID" Type="Int64" Nullable="false" />
+    <Property Name="RouteID" Type="Int32" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LastNumber" Type="Int64" />
+    <Property Name="RecordTime" Type="DateTime" Precision="3" />
+    <Property Name="InputTime" Type="Int32" />
+    <Property Name="Notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="User_Input" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="ImageSource" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ImageName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_ClockRecordRoute">
+    <Key>
+      <PropertyRef Name="BRID" />
+    </Key>
+    <Property Name="BRID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Period" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="RouteID" Type="Int32" Nullable="false" />
+    <Property Name="ClockStatus" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ClockRepair">
+    <Key>
+      <PropertyRef Name="RepairID" />
+    </Key>
+    <Property Name="RepairID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContractID" Type="Int64" Nullable="false" />
+    <Property Name="ContentID" Type="Int32" Nullable="false" />
+    <Property Name="Descr" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="GiveDate" Type="DateTime" Precision="0" />
+    <Property Name="FinishDate" Type="DateTime" Precision="0" />
+    <Property Name="ClockCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ClockTypeID" Type="Int32" />
+    <Property Name="NewFirstNumber" Type="Int64" />
+    <Property Name="OldLastNumber" Type="Int64" />
+    <Property Name="Cause" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_ClockRepairContent">
+    <Key>
+      <PropertyRef Name="ContentID" />
+    </Key>
+    <Property Name="ContentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContentCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ContentName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContentDescr" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_ClockType">
+    <Key>
+      <PropertyRef Name="ClockTypeID" />
+    </Key>
+    <Property Name="ClockTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClockTypeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ClockTypeDescr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Size" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_Contract">
+    <Key>
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="ContractID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContractCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ContractType" Type="Int16" Nullable="false" />
+    <Property Name="RegisterID" Type="Int64" Nullable="false" />
+    <Property Name="CustomerID" Type="Int64" Nullable="false" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="ValidDate" Type="DateTime" Precision="0" />
+    <Property Name="ContractStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ApplyDate" Type="DateTime" Precision="0" />
+    <Property Name="ClockCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ClockTypeID" Type="Int32" />
+    <Property Name="LastClockCheck" Type="DateTime" Precision="0" />
+    <Property Name="Notes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="0" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifyUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ZoneCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Disable" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CustomerTypeID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_CustomerRoute">
+    <Key>
+      <PropertyRef Name="CustomerRouteID" />
+    </Key>
+    <Property Name="CustomerRouteID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Period" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ContractID" Type="Int64" Nullable="false" />
+    <Property Name="RouteID" Type="Int32" Nullable="false" />
+    <Property Name="IndexOrder" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_CustomerType">
+    <Key>
+      <PropertyRef Name="CustomerTypeID" />
+    </Key>
+    <Property Name="CustomerTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerTypeCode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CustomerTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeFullName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsMobile" Type="Boolean" />
+    <Property Name="Imei1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Imei2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PrinterID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_EmployeeRoute">
+    <Key>
+      <PropertyRef Name="EmployeeRouteID" />
+    </Key>
+    <Property Name="EmployeeRouteID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int64" Nullable="false" />
+    <Property Name="Period" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="RouteID" Type="Int32" Nullable="false" />
+    <Property Name="AssignDate" Type="DateTime" Precision="0" />
+    <Property Name="Received" Type="Int16" />
+    <Property Name="Send" Type="Int16" />
+  </EntityType>
+  <EntityType Name="tbl_MobileAdmin">
+    <Key>
+      <PropertyRef Name="Imei" />
+    </Key>
+    <Property Name="Imei" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Period">
+    <Key>
+      <PropertyRef Name="PeriodID" />
+    </Key>
+    <Property Name="PeriodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Period" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="tbl_Register">
+    <Key>
+      <PropertyRef Name="RegisterID" />
+    </Key>
+    <Property Name="RegisterID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegisterCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CustomerID" Type="Int64" Nullable="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Notes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RegisterType" Type="Int32" Nullable="false" />
+    <Property Name="BuildAddress" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="0" />
+    <Property Name="ApproveDate" Type="DateTime" Precision="0" />
+    <Property Name="CreateUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ContractStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DesignImageSource" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LetterApproveSource" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FormRegisterSouce" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UserModifyDate" Type="DateTime" Precision="0" />
+    <Property Name="UserModifyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RepresentativeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TradeTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_Route">
+    <Key>
+      <PropertyRef Name="RouteID" />
+    </Key>
+    <Property Name="RouteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RouteCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RouteName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DisplayGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsValid" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="0" />
+    <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StatusDescr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StatusType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IsPublish" Type="Int16" />
+    <Property Name="No" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_UpdateClockSeries">
+    <Key>
+      <PropertyRef Name="ApplyID" />
+    </Key>
+    <Property Name="ApplyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContractID" Type="Int32" Nullable="false" />
+    <Property Name="ClockCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ApplyDate" Type="DateTime" Precision="0" />
+    <Property Name="FirstNum" Type="Int64" />
+    <Property Name="ModifyDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifyUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Zone">
+    <Key>
+      <PropertyRef Name="ZoneID" />
+    </Key>
+    <Property Name="ZoneID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ZoneCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ZoneName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="temp_Location">
+    <Key>
+      <PropertyRef Name="SiteId" />
+    </Key>
+    <Property Name="SiteId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Long" Type="Double" />
+  </EntityType>
+  <EntityType Name="test_1990">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="salary" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_Device_Status">
+    <Key>
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Language" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_Project_Progress">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="Int64" Nullable="false" />
+    <Property Name="NgayDaChapThuan" Type="DateTime" Precision="3" />
+    <Property Name="NgayChoDauNoi" Type="DateTime" Precision="3" />
+    <Property Name="NgayTienHanhDauNoi" Type="DateTime" Precision="3" />
+    <Property Name="NgayKeToan" Type="DateTime" Precision="3" />
+    <Property Name="NgayHSNT" Type="DateTime" Precision="3" />
+    <Property Name="NgayHT" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="t_Site_Availabilities">
+    <Key>
+      <PropertyRef Name="Availability" />
+    </Key>
+    <Property Name="Availability" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Language" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="t_Site_Status">
+    <Key>
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Language" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_t_Accreditations_t_Accreditation_Types">
+    <End Role="t_Accreditation_Types" Type="Self.t_Accreditation_Types" Multiplicity="0..1" />
+    <End Role="t_Accreditations" Type="Self.t_Accreditations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Accreditation_Types">
+        <PropertyRef Name="Type" />
+      </Principal>
+      <Dependent Role="t_Accreditations">
+        <PropertyRef Name="AccreditationType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Accreditations_t_Meters">
+    <End Role="t_Meters" Type="Self.t_Meters" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="t_Accreditations" Type="Self.t_Accreditations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Meters">
+        <PropertyRef Name="Serial" />
+      </Principal>
+      <Dependent Role="t_Accreditations">
+        <PropertyRef Name="MeterSerial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Accreditations_t_Transmitters">
+    <End Role="t_Transmitters" Type="Self.t_Transmitters" Multiplicity="0..1" />
+    <End Role="t_Accreditations" Type="Self.t_Accreditations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Transmitters">
+        <PropertyRef Name="Serial" />
+      </Principal>
+      <Dependent Role="t_Accreditations">
+        <PropertyRef Name="TransmitterSerial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Channel_Configurations_t_Logger_Configurations">
+    <End Role="t_Logger_Configurations" Type="Self.t_Logger_Configurations" Multiplicity="0..1" />
+    <End Role="t_Channel_Configurations" Type="Self.t_Channel_Configurations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Logger_Configurations">
+        <PropertyRef Name="LoggerId" />
+      </Principal>
+      <Dependent Role="t_Channel_Configurations">
+        <PropertyRef Name="LoggerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Data_Complexes_t_Logger_Configurations">
+    <End Role="t_Logger_Configurations" Type="Self.t_Logger_Configurations" Multiplicity="1" />
+    <End Role="t_Data_Complexes" Type="Self.t_Data_Complexes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Logger_Configurations">
+        <PropertyRef Name="LoggerId" />
+      </Principal>
+      <Dependent Role="t_Data_Complexes">
+        <PropertyRef Name="LoggerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Sites_t_DisplayGroups1">
+    <End Role="t_DisplayGroups" Type="Self.t_DisplayGroups" Multiplicity="0..1" />
+    <End Role="t_Sites" Type="Self.t_Sites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_DisplayGroups">
+        <PropertyRef Name="Group" />
+      </Principal>
+      <Dependent Role="t_Sites">
+        <PropertyRef Name="DisplayGroup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Sites_t_Logger_Configurations">
+    <End Role="t_Logger_Configurations" Type="Self.t_Logger_Configurations" Multiplicity="0..1" />
+    <End Role="t_Sites" Type="Self.t_Sites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Logger_Configurations">
+        <PropertyRef Name="LoggerId" />
+      </Principal>
+      <Dependent Role="t_Sites">
+        <PropertyRef Name="LoggerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Logger_Files_t_Loggers">
+    <End Role="t_Loggers" Type="Self.t_Loggers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="t_Logger_Files" Type="Self.t_Logger_Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Loggers">
+        <PropertyRef Name="Serial" />
+      </Principal>
+      <Dependent Role="t_Logger_Files">
+        <PropertyRef Name="LoggerSerial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Logger_Histories_t_Loggers2">
+    <End Role="t_Loggers" Type="Self.t_Loggers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="t_Logger_Histories" Type="Self.t_Logger_Histories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Loggers">
+        <PropertyRef Name="Serial" />
+      </Principal>
+      <Dependent Role="t_Logger_Histories">
+        <PropertyRef Name="NewLoggerSerial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Logger_Histories_t_Sites">
+    <End Role="t_Sites" Type="Self.t_Sites" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="t_Logger_Histories" Type="Self.t_Logger_Histories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Sites">
+        <PropertyRef Name="SiteId" />
+      </Principal>
+      <Dependent Role="t_Logger_Histories">
+        <PropertyRef Name="SiteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Sites_t_Loggers">
+    <End Role="t_Loggers" Type="Self.t_Loggers" Multiplicity="0..1" />
+    <End Role="t_Sites" Type="Self.t_Sites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Loggers">
+        <PropertyRef Name="Serial" />
+      </Principal>
+      <Dependent Role="t_Sites">
+        <PropertyRef Name="LoggerSerial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Meter_Files_t_Meters">
+    <End Role="t_Meters" Type="Self.t_Meters" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="t_Meter_Files" Type="Self.t_Meter_Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Meters">
+        <PropertyRef Name="Serial" />
+      </Principal>
+      <Dependent Role="t_Meter_Files">
+        <PropertyRef Name="MeterSerial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Meter_Histories_t_Meters2">
+    <End Role="t_Meters" Type="Self.t_Meters" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="t_Meter_Histories" Type="Self.t_Meter_Histories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Meters">
+        <PropertyRef Name="Serial" />
+      </Principal>
+      <Dependent Role="t_Meter_Histories">
+        <PropertyRef Name="NewMeterSerial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Sites_t_Meters">
+    <End Role="t_Meters" Type="Self.t_Meters" Multiplicity="0..1" />
+    <End Role="t_Sites" Type="Self.t_Sites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Meters">
+        <PropertyRef Name="Serial" />
+      </Principal>
+      <Dependent Role="t_Sites">
+        <PropertyRef Name="MeterSerial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Users_t_Roles1">
+    <End Role="t_Roles" Type="Self.t_Roles" Multiplicity="1" />
+    <End Role="t_Users" Type="Self.t_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Roles">
+        <PropertyRef Name="Role" />
+      </Principal>
+      <Dependent Role="t_Users">
+        <PropertyRef Name="Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Site_Files_t_Sites">
+    <End Role="t_Sites" Type="Self.t_Sites" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="t_Site_Files" Type="Self.t_Site_Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Sites">
+        <PropertyRef Name="SiteId" />
+      </Principal>
+      <Dependent Role="t_Site_Files">
+        <PropertyRef Name="SiteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Sites_t_Transmitters">
+    <End Role="t_Transmitters" Type="Self.t_Transmitters" Multiplicity="0..1" />
+    <End Role="t_Sites" Type="Self.t_Sites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Transmitters">
+        <PropertyRef Name="Serial" />
+      </Principal>
+      <Dependent Role="t_Sites">
+        <PropertyRef Name="TransmitterSerial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Users_t_Staffs">
+    <End Role="t_Staffs" Type="Self.t_Staffs" Multiplicity="0..1" />
+    <End Role="t_Users" Type="Self.t_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Staffs">
+        <PropertyRef Name="StaffId" />
+      </Principal>
+      <Dependent Role="t_Users">
+        <PropertyRef Name="StaffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_t_Transmitter_Histories_t_Transmitters">
+    <End Role="t_Transmitters" Type="Self.t_Transmitters" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="t_Transmitter_Histories" Type="Self.t_Transmitter_Histories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t_Transmitters">
+        <PropertyRef Name="Serial" />
+      </Principal>
+      <Dependent Role="t_Transmitter_Histories">
+        <PropertyRef Name="NewTransmitterSerial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KG_ClockRecordEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="t_Accountant_Files" EntityType="Self.t_Accountant_Files" />
+    <EntitySet Name="t_Accreditation_Types" EntityType="Self.t_Accreditation_Types" />
+    <EntitySet Name="t_Accreditations" EntityType="Self.t_Accreditations" />
+    <EntitySet Name="t_Alarm_Configurations" EntityType="Self.t_Alarm_Configurations" />
+    <EntitySet Name="t_Alarm_Warning" EntityType="Self.t_Alarm_Warning" />
+    <EntitySet Name="t_Alarms" EntityType="Self.t_Alarms" />
+    <EntitySet Name="t_BillingHistory" EntityType="Self.t_BillingHistory" />
+    <EntitySet Name="t_Books" EntityType="Self.t_Books" />
+    <EntitySet Name="t_Channel_Configurations" EntityType="Self.t_Channel_Configurations" />
+    <EntitySet Name="t_Consumers" EntityType="Self.t_Consumers" />
+    <EntitySet Name="t_Currency" EntityType="Self.t_Currency" />
+    <EntitySet Name="t_Data_Complexes" EntityType="Self.t_Data_Complexes" />
+    <EntitySet Name="t_DisplayGroups" EntityType="Self.t_DisplayGroups" />
+    <EntitySet Name="t_Emails" EntityType="Self.t_Emails" />
+    <EntitySet Name="t_Function" EntityType="Self.t_Function" />
+    <EntitySet Name="t_Language" EntityType="Self.t_Language" />
+    <EntitySet Name="t_LanguageTranslate" EntityType="Self.t_LanguageTranslate" />
+    <EntitySet Name="t_Logger_Configurations" EntityType="Self.t_Logger_Configurations" />
+    <EntitySet Name="t_Logger_Files" EntityType="Self.t_Logger_Files" />
+    <EntitySet Name="t_Logger_Histories" EntityType="Self.t_Logger_Histories" />
+    <EntitySet Name="t_Loggers" EntityType="Self.t_Loggers" />
+    <EntitySet Name="t_Manual_Phumy" EntityType="Self.t_Manual_Phumy" />
+    <EntitySet Name="t_Meter_Files" EntityType="Self.t_Meter_Files" />
+    <EntitySet Name="t_Meter_Histories" EntityType="Self.t_Meter_Histories" />
+    <EntitySet Name="t_Meters" EntityType="Self.t_Meters" />
+    <EntitySet Name="t_MeterSetupHistories" EntityType="Self.t_MeterSetupHistories" />
+    <EntitySet Name="t_Project_Manage" EntityType="Self.t_Project_Manage" />
+    <EntitySet Name="t_Reading" EntityType="Self.t_Reading" />
+    <EntitySet Name="t_RoleFunction" EntityType="Self.t_RoleFunction" />
+    <EntitySet Name="t_Roles" EntityType="Self.t_Roles" />
+    <EntitySet Name="t_Site_Files" EntityType="Self.t_Site_Files" />
+    <EntitySet Name="t_Sites" EntityType="Self.t_Sites" />
+    <EntitySet Name="t_SiteSetupHistories" EntityType="Self.t_SiteSetupHistories" />
+    <EntitySet Name="t_Staffs" EntityType="Self.t_Staffs" />
+    <EntitySet Name="t_SysParam" EntityType="Self.t_SysParam" />
+    <EntitySet Name="t_TaxCode" EntityType="Self.t_TaxCode" />
+    <EntitySet Name="t_Transmitter_Histories" EntityType="Self.t_Transmitter_Histories" />
+    <EntitySet Name="t_Transmitters" EntityType="Self.t_Transmitters" />
+    <EntitySet Name="t_UnitCode" EntityType="Self.t_UnitCode" />
+    <EntitySet Name="t_UnitCost" EntityType="Self.t_UnitCost" />
+    <EntitySet Name="t_Units" EntityType="Self.t_Units" />
+    <EntitySet Name="t_Users" EntityType="Self.t_Users" />
+    <EntitySet Name="t_UsingDiary" EntityType="Self.t_UsingDiary" />
+    <EntitySet Name="t_WasteWaterPercent" EntityType="Self.t_WasteWaterPercent" />
+    <EntitySet Name="tbl_ClockRecord" EntityType="Self.tbl_ClockRecord" />
+    <EntitySet Name="tbl_ClockRecord_History" EntityType="Self.tbl_ClockRecord_History" />
+    <EntitySet Name="tbl_ClockRecord_Mobile" EntityType="Self.tbl_ClockRecord_Mobile" />
+    <EntitySet Name="tbl_ClockRecordRoute" EntityType="Self.tbl_ClockRecordRoute" />
+    <EntitySet Name="tbl_ClockRepair" EntityType="Self.tbl_ClockRepair" />
+    <EntitySet Name="tbl_ClockRepairContent" EntityType="Self.tbl_ClockRepairContent" />
+    <EntitySet Name="tbl_ClockType" EntityType="Self.tbl_ClockType" />
+    <EntitySet Name="tbl_Contract" EntityType="Self.tbl_Contract" />
+    <EntitySet Name="tbl_Customer" EntityType="Self.tbl_Customer" />
+    <EntitySet Name="tbl_CustomerRoute" EntityType="Self.tbl_CustomerRoute" />
+    <EntitySet Name="tbl_CustomerType" EntityType="Self.tbl_CustomerType" />
+    <EntitySet Name="tbl_Employee" EntityType="Self.tbl_Employee" />
+    <EntitySet Name="tbl_EmployeeRoute" EntityType="Self.tbl_EmployeeRoute" />
+    <EntitySet Name="tbl_MobileAdmin" EntityType="Self.tbl_MobileAdmin" />
+    <EntitySet Name="tbl_Period" EntityType="Self.tbl_Period" />
+    <EntitySet Name="tbl_Register" EntityType="Self.tbl_Register" />
+    <EntitySet Name="tbl_Route" EntityType="Self.tbl_Route" />
+    <EntitySet Name="tbl_Status" EntityType="Self.tbl_Status" />
+    <EntitySet Name="tbl_UpdateClockSeries" EntityType="Self.tbl_UpdateClockSeries" />
+    <EntitySet Name="tbl_Zone" EntityType="Self.tbl_Zone" />
+    <EntitySet Name="temp_Location" EntityType="Self.temp_Location" />
+    <EntitySet Name="test_1990" EntityType="Self.test_1990" />
+    <EntitySet Name="t_Device_Status" EntityType="Self.t_Device_Status" />
+    <EntitySet Name="t_Project_Progress" EntityType="Self.t_Project_Progress" />
+    <EntitySet Name="t_Site_Availabilities" EntityType="Self.t_Site_Availabilities" />
+    <EntitySet Name="t_Site_Status" EntityType="Self.t_Site_Status" />
+    <AssociationSet Name="FK_t_Accreditations_t_Accreditation_Types" Association="Self.FK_t_Accreditations_t_Accreditation_Types">
+      <End Role="t_Accreditation_Types" EntitySet="t_Accreditation_Types" />
+      <End Role="t_Accreditations" EntitySet="t_Accreditations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Accreditations_t_Meters" Association="Self.FK_t_Accreditations_t_Meters">
+      <End Role="t_Meters" EntitySet="t_Meters" />
+      <End Role="t_Accreditations" EntitySet="t_Accreditations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Accreditations_t_Transmitters" Association="Self.FK_t_Accreditations_t_Transmitters">
+      <End Role="t_Transmitters" EntitySet="t_Transmitters" />
+      <End Role="t_Accreditations" EntitySet="t_Accreditations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Channel_Configurations_t_Logger_Configurations" Association="Self.FK_t_Channel_Configurations_t_Logger_Configurations">
+      <End Role="t_Logger_Configurations" EntitySet="t_Logger_Configurations" />
+      <End Role="t_Channel_Configurations" EntitySet="t_Channel_Configurations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Data_Complexes_t_Logger_Configurations" Association="Self.FK_t_Data_Complexes_t_Logger_Configurations">
+      <End Role="t_Logger_Configurations" EntitySet="t_Logger_Configurations" />
+      <End Role="t_Data_Complexes" EntitySet="t_Data_Complexes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Sites_t_DisplayGroups1" Association="Self.FK_t_Sites_t_DisplayGroups1">
+      <End Role="t_DisplayGroups" EntitySet="t_DisplayGroups" />
+      <End Role="t_Sites" EntitySet="t_Sites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Sites_t_Logger_Configurations" Association="Self.FK_t_Sites_t_Logger_Configurations">
+      <End Role="t_Logger_Configurations" EntitySet="t_Logger_Configurations" />
+      <End Role="t_Sites" EntitySet="t_Sites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Logger_Files_t_Loggers" Association="Self.FK_t_Logger_Files_t_Loggers">
+      <End Role="t_Loggers" EntitySet="t_Loggers" />
+      <End Role="t_Logger_Files" EntitySet="t_Logger_Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Logger_Histories_t_Loggers2" Association="Self.FK_t_Logger_Histories_t_Loggers2">
+      <End Role="t_Loggers" EntitySet="t_Loggers" />
+      <End Role="t_Logger_Histories" EntitySet="t_Logger_Histories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Logger_Histories_t_Sites" Association="Self.FK_t_Logger_Histories_t_Sites">
+      <End Role="t_Sites" EntitySet="t_Sites" />
+      <End Role="t_Logger_Histories" EntitySet="t_Logger_Histories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Sites_t_Loggers" Association="Self.FK_t_Sites_t_Loggers">
+      <End Role="t_Loggers" EntitySet="t_Loggers" />
+      <End Role="t_Sites" EntitySet="t_Sites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Meter_Files_t_Meters" Association="Self.FK_t_Meter_Files_t_Meters">
+      <End Role="t_Meters" EntitySet="t_Meters" />
+      <End Role="t_Meter_Files" EntitySet="t_Meter_Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Meter_Histories_t_Meters2" Association="Self.FK_t_Meter_Histories_t_Meters2">
+      <End Role="t_Meters" EntitySet="t_Meters" />
+      <End Role="t_Meter_Histories" EntitySet="t_Meter_Histories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Sites_t_Meters" Association="Self.FK_t_Sites_t_Meters">
+      <End Role="t_Meters" EntitySet="t_Meters" />
+      <End Role="t_Sites" EntitySet="t_Sites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Users_t_Roles1" Association="Self.FK_t_Users_t_Roles1">
+      <End Role="t_Roles" EntitySet="t_Roles" />
+      <End Role="t_Users" EntitySet="t_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Site_Files_t_Sites" Association="Self.FK_t_Site_Files_t_Sites">
+      <End Role="t_Sites" EntitySet="t_Sites" />
+      <End Role="t_Site_Files" EntitySet="t_Site_Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Sites_t_Transmitters" Association="Self.FK_t_Sites_t_Transmitters">
+      <End Role="t_Transmitters" EntitySet="t_Transmitters" />
+      <End Role="t_Sites" EntitySet="t_Sites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Users_t_Staffs" Association="Self.FK_t_Users_t_Staffs">
+      <End Role="t_Staffs" EntitySet="t_Staffs" />
+      <End Role="t_Users" EntitySet="t_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_t_Transmitter_Histories_t_Transmitters" Association="Self.FK_t_Transmitter_Histories_t_Transmitters">
+      <End Role="t_Transmitters" EntitySet="t_Transmitters" />
+      <End Role="t_Transmitter_Histories" EntitySet="t_Transmitter_Histories" />
+    </AssociationSet>
+    <FunctionImport Name="CustomSearch">
+      <Parameter Name="search" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DataInsert">
+      <Parameter Name="TName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DataXMLInsert" />
+    <FunctionImport Name="delete_complexdata">
+      <Parameter Name="LoggerId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="p_Calculate_One_Site_Daily_Output">
+      <Parameter Name="SiteId" Mode="In" Type="String" />
+      <Parameter Name="Start" Mode="In" Type="DateTime" />
+      <Parameter Name="End" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Calculate_One_Site_Hourly_Output">
+      <Parameter Name="SiteId" Mode="In" Type="String" />
+      <Parameter Name="Start" Mode="In" Type="DateTime" />
+      <Parameter Name="End" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Calculate_One_Site_Monthly_Output">
+      <Parameter Name="SiteId" Mode="In" Type="String" />
+      <Parameter Name="Start" Mode="In" Type="DateTime" />
+      <Parameter Name="End" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Calculate_One_Site_Yearly_Output">
+      <Parameter Name="SiteId" Mode="In" Type="String" />
+      <Parameter Name="Start" Mode="In" Type="DateTime" />
+      <Parameter Name="End" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Channel_Configuration" />
+    <FunctionImport Name="p_ComplexData_Select_Faster" />
+    <FunctionImport Name="p_ComplexData_Select_For_Consumer">
+      <Parameter Name="ConsumerId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="p_ComplexData_Select_For_Site">
+      <Parameter Name="SiteId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="p_ComplexData_Select_For_Staff">
+      <Parameter Name="StaffId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="p_Create_Data_Table">
+      <Parameter Name="ChannelId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="p_Data_Logger_Daily">
+      <Parameter Name="ChannelId" Mode="In" Type="String" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Data_Logger_Get">
+      <Parameter Name="ChannelId" Mode="In" Type="String" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Data_Logger_Get_Alarm">
+      <Parameter Name="ChannelId" Mode="In" Type="String" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Data_Logger_Hourly">
+      <Parameter Name="ChannelId" Mode="In" Type="String" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Data_Logger_Monthly">
+      <Parameter Name="ChannelId" Mode="In" Type="String" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Data_Logger_Yearly">
+      <Parameter Name="ChannelId" Mode="In" Type="String" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Data_ManualPhuMy_Get">
+      <Parameter Name="SiteId" Mode="In" Type="String" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Drop_Data_Table">
+      <Parameter Name="channelId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="p_GetClockRecordSites" ReturnType="Collection(KG_ClockRecordModel.p_GetClockRecordSites_Result)">
+      <Parameter Name="consumerId" Mode="In" Type="String" />
+      <Parameter Name="staffId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="p_GetClockRecordSitesByEmployee" ReturnType="Collection(KG_ClockRecordModel.p_GetClockRecordSitesByEmployee_Result)">
+      <Parameter Name="employeeCode" Mode="In" Type="String" />
+      <Parameter Name="routeCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="p_GetEmployeeRouter" ReturnType="Collection(KG_ClockRecordModel.p_GetEmployeeRouter_Result)" />
+    <FunctionImport Name="p_Index_Logger_Get">
+      <Parameter Name="ChannelId" Mode="In" Type="String" />
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EndDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Insert_ManualData_Table">
+      <Parameter Name="ChannelId" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Salary" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="p_Manual_Logger_Get">
+      <Parameter Name="ChannelId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="p_Our_Sites_Logger_As_Scada_Database" ReturnType="Collection(KG_ClockRecordModel.p_Our_Sites_Logger_As_Scada_Database_Result)" />
+    <FunctionImport Name="p_Press_Get">
+      <Parameter Name="Start" Mode="In" Type="DateTime" />
+      <Parameter Name="End" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Press_Get_2015">
+      <Parameter Name="start" Mode="In" Type="DateTime" />
+      <Parameter Name="end" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Press_Getw">
+      <Parameter Name="Start" Mode="In" Type="DateTime" />
+      <Parameter Name="End" Mode="In" Type="DateTime" />
+      <Parameter Name="cboSites" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="p_Press_Getw_Staff">
+      <Parameter Name="Start" Mode="In" Type="DateTime" />
+      <Parameter Name="End" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="p_Reading_Report">
+      <Parameter Name="period" Mode="In" Type="DateTime" />
+      <Parameter Name="zoneCode" Mode="In" Type="String" />
+      <Parameter Name="consumerId" Mode="In" Type="String" />
+      <Parameter Name="routeCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ProductsAccessXMLInsertDataComplex">
+      <Parameter Name="ValidXMLInput" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Service_GetClockRecordByRoute" ReturnType="Collection(KG_ClockRecordModel.Service_GetClockRecordByRoute_Result)">
+      <Parameter Name="RouteCode" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Imei" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="p_GetClockRecordSites_Result">
+    <Property Type="String" Name="SiteId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Location" Nullable="true" MaxLength="4000" />
+    <Property Type="Double" Name="Latitude" Nullable="true" />
+    <Property Type="Double" Name="Longitude" Nullable="true" />
+    <Property Type="Int16" Name="StatusLockBook" Nullable="true" />
+    <Property Type="String" Name="ConsumerId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Staffs" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="p_GetClockRecordSitesByEmployee_Result">
+    <Property Type="String" Name="SiteId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Location" Nullable="true" MaxLength="4000" />
+    <Property Type="Double" Name="Longitude" Nullable="true" />
+    <Property Type="Double" Name="Latitude" Nullable="true" />
+    <Property Type="Int16" Name="StatusLockBook" Nullable="true" />
+    <Property Type="String" Name="EmployeeCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="RouteCode" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="IndexOrder" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="p_GetEmployeeRouter_Result">
+    <Property Type="Int32" Name="RouteID" Nullable="false" />
+    <Property Type="DateTime" Name="Period" Nullable="true" Precision="16" />
+    <Property Type="String" Name="RouteCode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="RouteName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DisplayGroup" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="EmployeeID" Nullable="true" />
+    <Property Type="String" Name="EmployeeCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EmployeeFullName" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="p_Our_Sites_Logger_As_Scada_Database_Result">
+    <Property Type="String" Name="LoggerId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SiteAliasName" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="LastTimeResponse" Nullable="true" Precision="23" />
+    <Property Type="Double" Name="LastPress1" Nullable="true" />
+    <Property Type="Double" Name="LastPress2" Nullable="true" />
+    <Property Type="Double" Name="LastForwardFlow" Nullable="true" />
+    <Property Type="Double" Name="LastIndex" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Service_GetClockRecordByRoute_Result">
+    <Property Type="DateTime" Name="Period" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="RouteID" Nullable="false" />
+    <Property Type="String" Name="RouteCode" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="ContractID" Nullable="false" />
+    <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="BuildAddress" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="20" />
+    <Property Type="Int16" Name="ContractType" Nullable="true" />
+    <Property Type="String" Name="ClockTypeDescr" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ClockCode" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="StatusCode" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="IndexOrder" Nullable="false" />
+    <Property Type="Int64" Name="FirstNumber" Nullable="true" />
+    <Property Type="Int64" Name="LastNumber" Nullable="true" />
+    <Property Type="String" Name="LastFirstStatusCode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LastFirstStatusDescr" Nullable="false" MaxLength="1" />
+    <Property Type="Int64" Name="LastFirstUsageNumber" Nullable="false" />
+    <Property Type="String" Name="LastSecondStatusCode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LastSecondStatusDescr" Nullable="false" MaxLength="1" />
+    <Property Type="Int64" Name="LastSecondUsageNumber" Nullable="false" />
+    <Property Type="String" Name="LastThirdStatusCode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LastThirdStatusDescr" Nullable="false" MaxLength="1" />
+    <Property Type="Int64" Name="LastThirdUsageNumber" Nullable="false" />
+    <Property Type="String" Name="RecordTime" Nullable="false" MaxLength="8000" />
+    <Property Type="Int32" Name="InputTime" Nullable="false" />
+    <Property Type="String" Name="Notes" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="AvgUseNum" Nullable="false" />
+    <Property Type="Double" Name="Lon" Nullable="false" />
+    <Property Type="Double" Name="Lat" Nullable="false" />
+    <Property Type="String" Name="ZoneCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ZoneName" Nullable="false" MaxLength="4000" />
+    <Property Type="String" Name="ImageSource" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="ImageName" Nullable="false" MaxLength="100" />
+    <Property Type="Int16" Name="TyLeVuot" Nullable="true" />
+    <Property Type="String" Name="KhuVuc" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TenKhachhang" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="TenDiemDo" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ItemCode" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="TenDonGia" Nullable="true" MaxLength="15" />
+    <Property Type="Double" Name="TyleNuocThai" Nullable="false" />
+    <Property Type="String" Name="TaiKhoanKH" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MatKhauKH" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="FirstDate" Nullable="true" Precision="16" />
+  </ComplexType>
+</Schema>

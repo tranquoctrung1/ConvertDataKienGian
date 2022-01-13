@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EOSKG_WebAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="IDKH" />
+    </Key>
+    <Property Name="IDKH" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="MADP" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="DUONGPHU" Type="varchar" MaxLength="2" />
+    <Property Name="MADB" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="MADBCU" Type="varchar" MaxLength="8" />
+    <Property Name="STT" Type="int" />
+    <Property Name="MAMDSD" Type="varchar" MaxLength="10" />
+    <Property Name="MAKV" Type="varchar" MaxLength="10" />
+    <Property Name="NHOMKV" Type="int" />
+    <Property Name="TENKH" Type="nvarchar" MaxLength="200" />
+    <Property Name="SONHA" Type="nvarchar" MaxLength="150" />
+    <Property Name="MAPHUONG" Type="varchar" MaxLength="4" />
+    <Property Name="SDT" Type="varchar" MaxLength="30" />
+    <Property Name="CMND" Type="varchar" MaxLength="20" />
+    <Property Name="NOICAPCM" Type="nvarchar" MaxLength="100" />
+    <Property Name="MADDK" Type="varchar" MaxLength="11" />
+    <Property Name="MST" Type="varchar" MaxLength="20" />
+    <Property Name="STK" Type="varchar" MaxLength="50" />
+    <Property Name="MALKH" Type="varchar" MaxLength="10" />
+    <Property Name="MAHTTT" Type="varchar" MaxLength="2" />
+    <Property Name="ISDINHMUC" Type="bit" />
+    <Property Name="SONK" Type="int" />
+    <Property Name="M3KHOAN" Type="int" />
+    <Property Name="THUEBAO" Type="int" />
+    <Property Name="MALDH" Type="varchar" MaxLength="10" />
+    <Property Name="THUYLK" Type="varchar" MaxLength="50" />
+    <Property Name="MADH" Type="varchar" MaxLength="15" />
+    <Property Name="NGAYHT" Type="datetime" />
+    <Property Name="NGAYTHAYDH" Type="datetime" />
+    <Property Name="NGAYCUP" Type="datetime" />
+    <Property Name="SLANTHAYDH" Type="int" />
+    <Property Name="TTSD" Type="varchar" MaxLength="10" />
+    <Property Name="KOPHINT" Type="bit" />
+    <Property Name="KOVAT" Type="bit" />
+    <Property Name="TTHD" Type="bit" />
+    <Property Name="TTHD_TENKH" Type="nvarchar" MaxLength="200" />
+    <Property Name="TTHD_DIACHI" Type="nvarchar" MaxLength="200" />
+    <Property Name="MATT" Type="varchar" MaxLength="20" />
+    <Property Name="KYKHAITHAC" Type="date" />
+    <Property Name="CHISODAU" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="CHISOCUOI" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="CHANLE" Type="varchar" MaxLength="2" />
+    <Property Name="SODU" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ISXOABO" Type="bit" />
+    <Property Name="NGAYXOA" Type="datetime" />
+    <Property Name="MANVXOA" Type="varchar" MaxLength="10" />
+    <Property Name="ISNUOCTHO" Type="bit" />
+    <Property Name="GIAHD" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ISKHDB" Type="bit" />
+    <Property Name="SORT" Type="varchar" MaxLength="2" />
+    <Property Name="NGAYHETHANDH" Type="datetime" />
+    <Property Name="MAVUNG" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TIEUTHU">
+    <Key>
+      <PropertyRef Name="IDKH" />
+      <PropertyRef Name="NAM" />
+      <PropertyRef Name="THANG" />
+    </Key>
+    <Property Name="IDKH" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="NAM" Type="int" Nullable="false" />
+    <Property Name="THANG" Type="int" Nullable="false" />
+    <Property Name="STT" Type="int" />
+    <Property Name="TENKH" Type="nvarchar" MaxLength="200" />
+    <Property Name="SONHA" Type="nvarchar" MaxLength="100" />
+    <Property Name="MAKV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MADP" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="DUONGPHU" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="MADB" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="MADBCU" Type="varchar" MaxLength="8" />
+    <Property Name="SODB" Type="varchar" MaxLength="8" />
+    <Property Name="MAPHUONG" Type="varchar" MaxLength="10" />
+    <Property Name="CHISODAU" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="CHISOCUOI" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="KLTIEUTHU" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="MAMDSD" Type="varchar" MaxLength="10" />
+    <Property Name="MALKH" Type="varchar" MaxLength="10" />
+    <Property Name="MACQTT" Type="varchar" MaxLength="10" />
+    <Property Name="ISDINHMUC" Type="bit" />
+    <Property Name="SONK" Type="int" />
+    <Property Name="M3KHOAN" Type="int" />
+    <Property Name="THUEBAO" Type="int" />
+    <Property Name="BAOTRI" Type="int" />
+    <Property Name="TTSD" Type="varchar" MaxLength="10" />
+    <Property Name="KOPHINT" Type="bit" />
+    <Property Name="KOVAT" Type="bit" />
+    <Property Name="TTHAIGHI" Type="varchar" MaxLength="8" />
+    <Property Name="THBT" Type="varchar" MaxLength="12" />
+    <Property Name="TIENNUOC" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TIENPHI" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TIENTHUE" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TONGTIEN" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="M3SH" Type="int" />
+    <Property Name="GIASH" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TNUOCSH" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="THUESH" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="PHISH" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="M3SX" Type="int" />
+    <Property Name="GIASX" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TNUOCSX" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="THUESX" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="PHISX" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="M3KD" Type="int" />
+    <Property Name="GIAKD" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TNUOCKD" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="THUEKD" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="PHIKD" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="M3HD" Type="int" />
+    <Property Name="GIAHD" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TNUOCHD" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="THUEHD" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="PHIHD" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="CHISODAU_TT" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="CHISOCUOI_TT" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="KLTIEUTHU_TT" Type="decimal" Precision="19" Scale="0" />
+    <Property Name="TONGTIEN_TT" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="MAHTTT" Type="varchar" MaxLength="2" />
+    <Property Name="INHD" Type="bit" />
+    <Property Name="ISGCS" Type="bit" />
+    <Property Name="GHICHU_CS" Type="nvarchar" MaxLength="100" />
+    <Property Name="MANVN_CS" Type="varchar" MaxLength="10" />
+    <Property Name="NGAYNHAP_CS" Type="datetime" />
+    <Property Name="HETNO" Type="bit" />
+    <Property Name="THUTQ" Type="bit" />
+    <Property Name="TON" Type="bit" />
+    <Property Name="NGAYCN" Type="datetime" />
+    <Property Name="MANVNHAPCN" Type="varchar" MaxLength="10" />
+    <Property Name="NGAYNHAPCN" Type="datetime" />
+    <Property Name="GHICHUCN" Type="nvarchar" MaxLength="100" />
+    <Property Name="SOPHIEUCN" Type="varchar" MaxLength="50" />
+    <Property Name="TIENNO" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ISTRACHAM" Type="bit" />
+    <Property Name="CHIADOITUONG" Type="bit" />
+    <Property Name="SOSERIALHD" Type="varchar" MaxLength="20" />
+    <Property Name="ISXOABO" Type="bit" />
+    <Property Name="GIAPHI" Type="decimal" Precision="18" Scale="8" />
+    <Property Name="ISNUOCTHO" Type="bit" />
+    <Property Name="PTPHITHUEBAO" Type="int" />
+    <Property Name="PTTHUE" Type="int" />
+    <Property Name="ISKHDB" Type="bit" />
+    <Property Name="MAVUNG" Type="varchar" MaxLength="10" />
+    <Property Name="NGAYKY_DIENTU" Type="datetime" />
+    <Property Name="FILE_DIENTU" Type="varchar" MaxLength="100" />
+    <Property Name="ISCOCHINHSUA_CONGNO" Type="bit" />
+    <Property Name="SO_HOADON_DIENTU" Type="varchar" MaxLength="7" />
+    <Property Name="KYHIEU_DIENTU" Type="varchar" MaxLength="7" />
+    <Property Name="ISCHOPHEPTAISOM" Type="bit" />
+    <Property Name="ISKHACHHANGDATAIHOADON" Type="bit" />
+    <Property Name="NGAYKHACHHANGTAIHOADON" Type="datetime" />
+    <Property Name="IS_CHAN_KHONGCHOTAI_HOADON" Type="bit" />
+    <Property Name="ISPHATSINH_HDDIENTU" Type="bit" />
+    <Property Name="ISGIATN" Type="bit" />
+  </EntityType>
+  <Association Name="FK_TIEUTHU_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="TIEUTHU" Type="Self.TIEUTHU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="IDKH" />
+      </Principal>
+      <Dependent Role="TIEUTHU">
+        <PropertyRef Name="IDKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EOSKG_WebAppModelStoreContainer">
+    <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TIEUTHU" EntityType="Self.TIEUTHU" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TIEUTHU_KHACHHANG" Association="Self.FK_TIEUTHU_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="TIEUTHU" EntitySet="TIEUTHU" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

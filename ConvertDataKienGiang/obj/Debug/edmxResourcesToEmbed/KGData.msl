@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EOSKG_WebAppModelStoreContainer" CdmEntityContainer="EOSKG_WebAppEntities">
+    <EntitySetMapping Name="KHACHHANGs">
+      <EntityTypeMapping TypeName="EOSKG_WebAppModel.KHACHHANG">
+        <MappingFragment StoreEntitySet="KHACHHANG">
+          <ScalarProperty Name="IDKH" ColumnName="IDKH" />
+          <ScalarProperty Name="MADP" ColumnName="MADP" />
+          <ScalarProperty Name="DUONGPHU" ColumnName="DUONGPHU" />
+          <ScalarProperty Name="MADB" ColumnName="MADB" />
+          <ScalarProperty Name="MADBCU" ColumnName="MADBCU" />
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="MAMDSD" ColumnName="MAMDSD" />
+          <ScalarProperty Name="MAKV" ColumnName="MAKV" />
+          <ScalarProperty Name="NHOMKV" ColumnName="NHOMKV" />
+          <ScalarProperty Name="TENKH" ColumnName="TENKH" />
+          <ScalarProperty Name="SONHA" ColumnName="SONHA" />
+          <ScalarProperty Name="MAPHUONG" ColumnName="MAPHUONG" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="CMND" ColumnName="CMND" />
+          <ScalarProperty Name="NOICAPCM" ColumnName="NOICAPCM" />
+          <ScalarProperty Name="MADDK" ColumnName="MADDK" />
+          <ScalarProperty Name="MST" ColumnName="MST" />
+          <ScalarProperty Name="STK" ColumnName="STK" />
+          <ScalarProperty Name="MALKH" ColumnName="MALKH" />
+          <ScalarProperty Name="MAHTTT" ColumnName="MAHTTT" />
+          <ScalarProperty Name="ISDINHMUC" ColumnName="ISDINHMUC" />
+          <ScalarProperty Name="SONK" ColumnName="SONK" />
+          <ScalarProperty Name="M3KHOAN" ColumnName="M3KHOAN" />
+          <ScalarProperty Name="THUEBAO" ColumnName="THUEBAO" />
+          <ScalarProperty Name="MALDH" ColumnName="MALDH" />
+          <ScalarProperty Name="THUYLK" ColumnName="THUYLK" />
+          <ScalarProperty Name="MADH" ColumnName="MADH" />
+          <ScalarProperty Name="NGAYHT" ColumnName="NGAYHT" />
+          <ScalarProperty Name="NGAYTHAYDH" ColumnName="NGAYTHAYDH" />
+          <ScalarProperty Name="NGAYCUP" ColumnName="NGAYCUP" />
+          <ScalarProperty Name="SLANTHAYDH" ColumnName="SLANTHAYDH" />
+          <ScalarProperty Name="TTSD" ColumnName="TTSD" />
+          <ScalarProperty Name="KOPHINT" ColumnName="KOPHINT" />
+          <ScalarProperty Name="KOVAT" ColumnName="KOVAT" />
+          <ScalarProperty Name="TTHD" ColumnName="TTHD" />
+          <ScalarProperty Name="TTHD_TENKH" ColumnName="TTHD_TENKH" />
+          <ScalarProperty Name="TTHD_DIACHI" ColumnName="TTHD_DIACHI" />
+          <ScalarProperty Name="MATT" ColumnName="MATT" />
+          <ScalarProperty Name="KYKHAITHAC" ColumnName="KYKHAITHAC" />
+          <ScalarProperty Name="CHISODAU" ColumnName="CHISODAU" />
+          <ScalarProperty Name="CHISOCUOI" ColumnName="CHISOCUOI" />
+          <ScalarProperty Name="CHANLE" ColumnName="CHANLE" />
+          <ScalarProperty Name="SODU" ColumnName="SODU" />
+          <ScalarProperty Name="ISXOABO" ColumnName="ISXOABO" />
+          <ScalarProperty Name="NGAYXOA" ColumnName="NGAYXOA" />
+          <ScalarProperty Name="MANVXOA" ColumnName="MANVXOA" />
+          <ScalarProperty Name="ISNUOCTHO" ColumnName="ISNUOCTHO" />
+          <ScalarProperty Name="GIAHD" ColumnName="GIAHD" />
+          <ScalarProperty Name="ISKHDB" ColumnName="ISKHDB" />
+          <ScalarProperty Name="SORT" ColumnName="SORT" />
+          <ScalarProperty Name="NGAYHETHANDH" ColumnName="NGAYHETHANDH" />
+          <ScalarProperty Name="MAVUNG" ColumnName="MAVUNG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIEUTHUs">
+      <EntityTypeMapping TypeName="EOSKG_WebAppModel.TIEUTHU">
+        <MappingFragment StoreEntitySet="TIEUTHU">
+          <ScalarProperty Name="IDKH" ColumnName="IDKH" />
+          <ScalarProperty Name="NAM" ColumnName="NAM" />
+          <ScalarProperty Name="THANG" ColumnName="THANG" />
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="TENKH" ColumnName="TENKH" />
+          <ScalarProperty Name="SONHA" ColumnName="SONHA" />
+          <ScalarProperty Name="MAKV" ColumnName="MAKV" />
+          <ScalarProperty Name="MADP" ColumnName="MADP" />
+          <ScalarProperty Name="DUONGPHU" ColumnName="DUONGPHU" />
+          <ScalarProperty Name="MADB" ColumnName="MADB" />
+          <ScalarProperty Name="MADBCU" ColumnName="MADBCU" />
+          <ScalarProperty Name="SODB" ColumnName="SODB" />
+          <ScalarProperty Name="MAPHUONG" ColumnName="MAPHUONG" />
+          <ScalarProperty Name="CHISODAU" ColumnName="CHISODAU" />
+          <ScalarProperty Name="CHISOCUOI" ColumnName="CHISOCUOI" />
+          <ScalarProperty Name="KLTIEUTHU" ColumnName="KLTIEUTHU" />
+          <ScalarProperty Name="MAMDSD" ColumnName="MAMDSD" />
+          <ScalarProperty Name="MALKH" ColumnName="MALKH" />
+          <ScalarProperty Name="MACQTT" ColumnName="MACQTT" />
+          <ScalarProperty Name="ISDINHMUC" ColumnName="ISDINHMUC" />
+          <ScalarProperty Name="SONK" ColumnName="SONK" />
+          <ScalarProperty Name="M3KHOAN" ColumnName="M3KHOAN" />
+          <ScalarProperty Name="THUEBAO" ColumnName="THUEBAO" />
+          <ScalarProperty Name="BAOTRI" ColumnName="BAOTRI" />
+          <ScalarProperty Name="TTSD" ColumnName="TTSD" />
+          <ScalarProperty Name="KOPHINT" ColumnName="KOPHINT" />
+          <ScalarProperty Name="KOVAT" ColumnName="KOVAT" />
+          <ScalarProperty Name="TTHAIGHI" ColumnName="TTHAIGHI" />
+          <ScalarProperty Name="THBT" ColumnName="THBT" />
+          <ScalarProperty Name="TIENNUOC" ColumnName="TIENNUOC" />
+          <ScalarProperty Name="TIENPHI" ColumnName="TIENPHI" />
+          <ScalarProperty Name="TIENTHUE" ColumnName="TIENTHUE" />
+          <ScalarProperty Name="TONGTIEN" ColumnName="TONGTIEN" />
+          <ScalarProperty Name="M3SH" ColumnName="M3SH" />
+          <ScalarProperty Name="GIASH" ColumnName="GIASH" />
+          <ScalarProperty Name="TNUOCSH" ColumnName="TNUOCSH" />
+          <ScalarProperty Name="THUESH" ColumnName="THUESH" />
+          <ScalarProperty Name="PHISH" ColumnName="PHISH" />
+          <ScalarProperty Name="M3SX" ColumnName="M3SX" />
+          <ScalarProperty Name="GIASX" ColumnName="GIASX" />
+          <ScalarProperty Name="TNUOCSX" ColumnName="TNUOCSX" />
+          <ScalarProperty Name="THUESX" ColumnName="THUESX" />
+          <ScalarProperty Name="PHISX" ColumnName="PHISX" />
+          <ScalarProperty Name="M3KD" ColumnName="M3KD" />
+          <ScalarProperty Name="GIAKD" ColumnName="GIAKD" />
+          <ScalarProperty Name="TNUOCKD" ColumnName="TNUOCKD" />
+          <ScalarProperty Name="THUEKD" ColumnName="THUEKD" />
+          <ScalarProperty Name="PHIKD" ColumnName="PHIKD" />
+          <ScalarProperty Name="M3HD" ColumnName="M3HD" />
+          <ScalarProperty Name="GIAHD" ColumnName="GIAHD" />
+          <ScalarProperty Name="TNUOCHD" ColumnName="TNUOCHD" />
+          <ScalarProperty Name="THUEHD" ColumnName="THUEHD" />
+          <ScalarProperty Name="PHIHD" ColumnName="PHIHD" />
+          <ScalarProperty Name="CHISODAU_TT" ColumnName="CHISODAU_TT" />
+          <ScalarProperty Name="CHISOCUOI_TT" ColumnName="CHISOCUOI_TT" />
+          <ScalarProperty Name="KLTIEUTHU_TT" ColumnName="KLTIEUTHU_TT" />
+          <ScalarProperty Name="TONGTIEN_TT" ColumnName="TONGTIEN_TT" />
+          <ScalarProperty Name="MAHTTT" ColumnName="MAHTTT" />
+          <ScalarProperty Name="INHD" ColumnName="INHD" />
+          <ScalarProperty Name="ISGCS" ColumnName="ISGCS" />
+          <ScalarProperty Name="GHICHU_CS" ColumnName="GHICHU_CS" />
+          <ScalarProperty Name="MANVN_CS" ColumnName="MANVN_CS" />
+          <ScalarProperty Name="NGAYNHAP_CS" ColumnName="NGAYNHAP_CS" />
+          <ScalarProperty Name="HETNO" ColumnName="HETNO" />
+          <ScalarProperty Name="THUTQ" ColumnName="THUTQ" />
+          <ScalarProperty Name="TON" ColumnName="TON" />
+          <ScalarProperty Name="NGAYCN" ColumnName="NGAYCN" />
+          <ScalarProperty Name="MANVNHAPCN" ColumnName="MANVNHAPCN" />
+          <ScalarProperty Name="NGAYNHAPCN" ColumnName="NGAYNHAPCN" />
+          <ScalarProperty Name="GHICHUCN" ColumnName="GHICHUCN" />
+          <ScalarProperty Name="SOPHIEUCN" ColumnName="SOPHIEUCN" />
+          <ScalarProperty Name="TIENNO" ColumnName="TIENNO" />
+          <ScalarProperty Name="ISTRACHAM" ColumnName="ISTRACHAM" />
+          <ScalarProperty Name="CHIADOITUONG" ColumnName="CHIADOITUONG" />
+          <ScalarProperty Name="SOSERIALHD" ColumnName="SOSERIALHD" />
+          <ScalarProperty Name="ISXOABO" ColumnName="ISXOABO" />
+          <ScalarProperty Name="GIAPHI" ColumnName="GIAPHI" />
+          <ScalarProperty Name="ISNUOCTHO" ColumnName="ISNUOCTHO" />
+          <ScalarProperty Name="PTPHITHUEBAO" ColumnName="PTPHITHUEBAO" />
+          <ScalarProperty Name="PTTHUE" ColumnName="PTTHUE" />
+          <ScalarProperty Name="ISKHDB" ColumnName="ISKHDB" />
+          <ScalarProperty Name="MAVUNG" ColumnName="MAVUNG" />
+          <ScalarProperty Name="NGAYKY_DIENTU" ColumnName="NGAYKY_DIENTU" />
+          <ScalarProperty Name="FILE_DIENTU" ColumnName="FILE_DIENTU" />
+          <ScalarProperty Name="ISCOCHINHSUA_CONGNO" ColumnName="ISCOCHINHSUA_CONGNO" />
+          <ScalarProperty Name="SO_HOADON_DIENTU" ColumnName="SO_HOADON_DIENTU" />
+          <ScalarProperty Name="KYHIEU_DIENTU" ColumnName="KYHIEU_DIENTU" />
+          <ScalarProperty Name="ISCHOPHEPTAISOM" ColumnName="ISCHOPHEPTAISOM" />
+          <ScalarProperty Name="ISKHACHHANGDATAIHOADON" ColumnName="ISKHACHHANGDATAIHOADON" />
+          <ScalarProperty Name="NGAYKHACHHANGTAIHOADON" ColumnName="NGAYKHACHHANGTAIHOADON" />
+          <ScalarProperty Name="IS_CHAN_KHONGCHOTAI_HOADON" ColumnName="IS_CHAN_KHONGCHOTAI_HOADON" />
+          <ScalarProperty Name="ISPHATSINH_HDDIENTU" ColumnName="ISPHATSINH_HDDIENTU" />
+          <ScalarProperty Name="ISGIATN" ColumnName="ISGIATN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

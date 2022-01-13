@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EOSKG_WebAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="IDKH" />
+    </Key>
+    <Property Name="IDKH" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MADP" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DUONGPHU" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="MADB" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MADBCU" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="STT" Type="Int32" />
+    <Property Name="MAMDSD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MAKV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NHOMKV" Type="Int32" />
+    <Property Name="TENKH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SONHA" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MAPHUONG" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="SDT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CMND" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NOICAPCM" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MADDK" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="MST" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MALKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MAHTTT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="ISDINHMUC" Type="Boolean" />
+    <Property Name="SONK" Type="Int32" />
+    <Property Name="M3KHOAN" Type="Int32" />
+    <Property Name="THUEBAO" Type="Int32" />
+    <Property Name="MALDH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="THUYLK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MADH" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="NGAYHT" Type="DateTime" Precision="3" />
+    <Property Name="NGAYTHAYDH" Type="DateTime" Precision="3" />
+    <Property Name="NGAYCUP" Type="DateTime" Precision="3" />
+    <Property Name="SLANTHAYDH" Type="Int32" />
+    <Property Name="TTSD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="KOPHINT" Type="Boolean" />
+    <Property Name="KOVAT" Type="Boolean" />
+    <Property Name="TTHD" Type="Boolean" />
+    <Property Name="TTHD_TENKH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TTHD_DIACHI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MATT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="KYKHAITHAC" Type="DateTime" Precision="0" />
+    <Property Name="CHISODAU" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CHISOCUOI" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CHANLE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SODU" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ISXOABO" Type="Boolean" />
+    <Property Name="NGAYXOA" Type="DateTime" Precision="3" />
+    <Property Name="MANVXOA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ISNUOCTHO" Type="Boolean" />
+    <Property Name="GIAHD" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ISKHDB" Type="Boolean" />
+    <Property Name="SORT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="NGAYHETHANDH" Type="DateTime" Precision="3" />
+    <Property Name="MAVUNG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TIEUTHUs" Relationship="Self.FK_TIEUTHU_KHACHHANG" FromRole="KHACHHANG" ToRole="TIEUTHU" />
+  </EntityType>
+  <EntityType Name="TIEUTHU">
+    <Key>
+      <PropertyRef Name="IDKH" />
+      <PropertyRef Name="NAM" />
+      <PropertyRef Name="THANG" />
+    </Key>
+    <Property Name="IDKH" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NAM" Type="Int32" Nullable="false" />
+    <Property Name="THANG" Type="Int32" Nullable="false" />
+    <Property Name="STT" Type="Int32" />
+    <Property Name="TENKH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SONHA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MAKV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MADP" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DUONGPHU" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MADB" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MADBCU" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="SODB" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="MAPHUONG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CHISODAU" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="CHISOCUOI" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="KLTIEUTHU" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="MAMDSD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MALKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MACQTT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ISDINHMUC" Type="Boolean" />
+    <Property Name="SONK" Type="Int32" />
+    <Property Name="M3KHOAN" Type="Int32" />
+    <Property Name="THUEBAO" Type="Int32" />
+    <Property Name="BAOTRI" Type="Int32" />
+    <Property Name="TTSD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="KOPHINT" Type="Boolean" />
+    <Property Name="KOVAT" Type="Boolean" />
+    <Property Name="TTHAIGHI" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="THBT" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="TIENNUOC" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="TIENPHI" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="TIENTHUE" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="TONGTIEN" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="M3SH" Type="Int32" />
+    <Property Name="GIASH" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="TNUOCSH" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="THUESH" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="PHISH" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="M3SX" Type="Int32" />
+    <Property Name="GIASX" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="TNUOCSX" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="THUESX" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="PHISX" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="M3KD" Type="Int32" />
+    <Property Name="GIAKD" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="TNUOCKD" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="THUEKD" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="PHIKD" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="M3HD" Type="Int32" />
+    <Property Name="GIAHD" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="TNUOCHD" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="THUEHD" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="PHIHD" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="CHISODAU_TT" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="CHISOCUOI_TT" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="KLTIEUTHU_TT" Type="Decimal" Precision="19" Scale="0" />
+    <Property Name="TONGTIEN_TT" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="MAHTTT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="INHD" Type="Boolean" />
+    <Property Name="ISGCS" Type="Boolean" />
+    <Property Name="GHICHU_CS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MANVN_CS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NGAYNHAP_CS" Type="DateTime" Precision="3" />
+    <Property Name="HETNO" Type="Boolean" />
+    <Property Name="THUTQ" Type="Boolean" />
+    <Property Name="TON" Type="Boolean" />
+    <Property Name="NGAYCN" Type="DateTime" Precision="3" />
+    <Property Name="MANVNHAPCN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NGAYNHAPCN" Type="DateTime" Precision="3" />
+    <Property Name="GHICHUCN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SOPHIEUCN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TIENNO" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ISTRACHAM" Type="Boolean" />
+    <Property Name="CHIADOITUONG" Type="Boolean" />
+    <Property Name="SOSERIALHD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ISXOABO" Type="Boolean" />
+    <Property Name="GIAPHI" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="ISNUOCTHO" Type="Boolean" />
+    <Property Name="PTPHITHUEBAO" Type="Int32" />
+    <Property Name="PTTHUE" Type="Int32" />
+    <Property Name="ISKHDB" Type="Boolean" />
+    <Property Name="MAVUNG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NGAYKY_DIENTU" Type="DateTime" Precision="3" />
+    <Property Name="FILE_DIENTU" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ISCOCHINHSUA_CONGNO" Type="Boolean" />
+    <Property Name="SO_HOADON_DIENTU" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="KYHIEU_DIENTU" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="ISCHOPHEPTAISOM" Type="Boolean" />
+    <Property Name="ISKHACHHANGDATAIHOADON" Type="Boolean" />
+    <Property Name="NGAYKHACHHANGTAIHOADON" Type="DateTime" Precision="3" />
+    <Property Name="IS_CHAN_KHONGCHOTAI_HOADON" Type="Boolean" />
+    <Property Name="ISPHATSINH_HDDIENTU" Type="Boolean" />
+    <Property Name="ISGIATN" Type="Boolean" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_TIEUTHU_KHACHHANG" FromRole="TIEUTHU" ToRole="KHACHHANG" />
+  </EntityType>
+  <Association Name="FK_TIEUTHU_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="TIEUTHU" Type="Self.TIEUTHU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="IDKH" />
+      </Principal>
+      <Dependent Role="TIEUTHU">
+        <PropertyRef Name="IDKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EOSKG_WebAppEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+    <EntitySet Name="TIEUTHUs" EntityType="Self.TIEUTHU" />
+    <AssociationSet Name="FK_TIEUTHU_KHACHHANG" Association="Self.FK_TIEUTHU_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="TIEUTHU" EntitySet="TIEUTHUs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

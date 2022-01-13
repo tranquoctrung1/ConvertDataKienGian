@@ -33,8 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,11 +50,319 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Action\GetListKHAction.cs" />
+    <Compile Include="Action\GetListTieuThuAction.cs" />
+    <Compile Include="Action\InsertClockRecordAction.cs" />
+    <Compile Include="Action\InsertConsumerAction.cs" />
+    <Compile Include="Action\InsertContractAction.cs" />
+    <Compile Include="Action\InsertDataKGRecordAction.cs" />
+    <Compile Include="Action\InsertMeterAction.cs" />
+    <Compile Include="KGClock.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KGClock.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KGClock.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KGClock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KGClock.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="KGData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KGData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KGData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KGData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KGData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KGData.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="KHACHHANG.cs">
+      <DependentUpon>KGData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="p_GetClockRecordSitesByEmployee_Result.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="p_GetClockRecordSites_Result.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="p_GetEmployeeRouter_Result.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="p_Our_Sites_Logger_As_Scada_Database_Result.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service_GetClockRecordByRoute_Result.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ClockRecord.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ClockRecordRoute.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ClockRecord_History.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ClockRecord_Mobile.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ClockRepair.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ClockRepairContent.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ClockType.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Contract.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Customer.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_CustomerRoute.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_CustomerType.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Employee.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_EmployeeRoute.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_MobileAdmin.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Period.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Register.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Route.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Status.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_UpdateClockSeries.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Zone.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_Location.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="test_1990.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TIEUTHU.cs">
+      <DependentUpon>KGData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Accountant_Files.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Accreditations.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Accreditation_Types.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Alarms.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Alarm_Configurations.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Alarm_Warning.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_BillingHistory.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Books.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Channel_Configurations.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Consumers.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Currency.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Data_Complexes.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Device_Status.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_DisplayGroups.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Emails.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Function.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Language.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_LanguageTranslate.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Loggers.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Logger_Configurations.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Logger_Files.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Logger_Histories.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Manual_Phumy.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Meters.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_MeterSetupHistories.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Meter_Files.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Meter_Histories.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Project_Manage.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Project_Progress.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Reading.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_RoleFunction.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Roles.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Sites.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_SiteSetupHistories.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Site_Availabilities.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Site_Files.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Site_Status.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Staffs.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_SysParam.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_TaxCode.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Transmitters.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Transmitter_Histories.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_UnitCode.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_UnitCost.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Units.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_Users.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_UsingDiary.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_WasteWaterPercent.cs">
+      <DependentUpon>KGClock.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="KGClock.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KGClock.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="KGClock.edmx.diagram">
+      <DependentUpon>KGClock.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="KGData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KGData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="KGData.edmx.diagram">
+      <DependentUpon>KGData.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="KGClock.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KGClock.edmx</DependentUpon>
+      <LastGenOutput>KGClock.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="KGClock.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KGClock.edmx</DependentUpon>
+      <LastGenOutput>KGClock.cs</LastGenOutput>
+    </Content>
+    <Content Include="KGData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KGData.edmx</DependentUpon>
+      <LastGenOutput>KGData.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="KGData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KGData.edmx</DependentUpon>
+      <LastGenOutput>KGData.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

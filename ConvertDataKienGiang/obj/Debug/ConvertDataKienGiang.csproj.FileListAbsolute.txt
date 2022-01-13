@@ -1,0 +1,10 @@
+D:\project\ConvertDataKienGiang\ConvertDataKienGiang\bin\Debug\ConvertDataKienGiang.exe.config
+D:\project\ConvertDataKienGiang\ConvertDataKienGiang\bin\Debug\ConvertDataKienGiang.exe
+D:\project\ConvertDataKienGiang\ConvertDataKienGiang\bin\Debug\ConvertDataKienGiang.pdb
+D:\project\ConvertDataKienGiang\ConvertDataKienGiang\bin\Debug\EntityFramework.dll
+D:\project\ConvertDataKienGiang\ConvertDataKienGiang\bin\Debug\EntityFramework.xml
+D:\project\ConvertDataKienGiang\ConvertDataKienGiang\obj\Debug\ConvertDataKienGiang.csproj.AssemblyReference.cache
+D:\project\ConvertDataKienGiang\ConvertDataKienGiang\obj\Debug\ConvertDataKienGiang.csproj.CoreCompileInputs.cache
+D:\project\ConvertDataKienGiang\ConvertDataKienGiang\obj\Debug\ConvertDataKienGiang.csproj.CopyComplete
+D:\project\ConvertDataKienGiang\ConvertDataKienGiang\obj\Debug\ConvertDataKienGiang.exe
+D:\project\ConvertDataKienGiang\ConvertDataKienGiang\obj\Debug\ConvertDataKienGiang.pdb

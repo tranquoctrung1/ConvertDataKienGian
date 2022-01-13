@@ -1,0 +1,1195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KG_ClockRecordModelStoreContainer" CdmEntityContainer="KG_ClockRecordEntities">
+    <EntitySetMapping Name="t_Accountant_Files">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Accountant_Files">
+        <MappingFragment StoreEntitySet="t_Accountant_Files">
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+          <ScalarProperty Name="UploadBy" ColumnName="UploadBy" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Accreditation_Types">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Accreditation_Types">
+        <MappingFragment StoreEntitySet="t_Accreditation_Types">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Accreditations">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Accreditations">
+        <MappingFragment StoreEntitySet="t_Accreditations">
+          <ScalarProperty Name="AccreditationDocument" ColumnName="AccreditationDocument" />
+          <ScalarProperty Name="MeterSerial" ColumnName="MeterSerial" />
+          <ScalarProperty Name="TransmitterSerial" ColumnName="TransmitterSerial" />
+          <ScalarProperty Name="AccreditationType" ColumnName="AccreditationType" />
+          <ScalarProperty Name="AccreditationDate" ColumnName="AccreditationDate" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsPass" ColumnName="IsPass" />
+          <ScalarProperty Name="IsConfirm" ColumnName="IsConfirm" />
+          <ScalarProperty Name="ConfirmDay" ColumnName="ConfirmDay" />
+          <ScalarProperty Name="ConfirmBy" ColumnName="ConfirmBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Alarm_Configurations">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Alarm_Configurations">
+        <MappingFragment StoreEntitySet="t_Alarm_Configurations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="PhoneNr" ColumnName="PhoneNr" />
+          <ScalarProperty Name="PhoneNr2" ColumnName="PhoneNr2" />
+          <ScalarProperty Name="PhoneNr3" ColumnName="PhoneNr3" />
+          <ScalarProperty Name="Ena1" ColumnName="Ena1" />
+          <ScalarProperty Name="Ena2" ColumnName="Ena2" />
+          <ScalarProperty Name="Ena3" ColumnName="Ena3" />
+          <ScalarProperty Name="Ena4" ColumnName="Ena4" />
+          <ScalarProperty Name="Ena" ColumnName="Ena" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Alarm_Warning">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Alarm_Warning">
+        <MappingFragment StoreEntitySet="t_Alarm_Warning">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="ChannelId" ColumnName="ChannelId" />
+          <ScalarProperty Name="RangeName" ColumnName="RangeName" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Lower" ColumnName="Lower" />
+          <ScalarProperty Name="Upper" ColumnName="Upper" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Alarms">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Alarms">
+        <MappingFragment StoreEntitySet="t_Alarms">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+          <ScalarProperty Name="ChannelId" ColumnName="ChannelId" />
+          <ScalarProperty Name="ChannelName" ColumnName="ChannelName" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="Msg1" ColumnName="Msg1" />
+          <ScalarProperty Name="Msg2" ColumnName="Msg2" />
+          <ScalarProperty Name="Msg3" ColumnName="Msg3" />
+          <ScalarProperty Name="Msg4" ColumnName="Msg4" />
+          <ScalarProperty Name="Trigger" ColumnName="Trigger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_BillingHistory">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_BillingHistory">
+        <MappingFragment StoreEntitySet="t_BillingHistory">
+          <ScalarProperty Name="BookName" ColumnName="BookName" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="ref_count" ColumnName="ref_count" />
+          <ScalarProperty Name="SO_REF" ColumnName="SO_REF" />
+          <ScalarProperty Name="SO_LINE" ColumnName="SO_LINE" />
+          <ScalarProperty Name="SO_DATE" ColumnName="SO_DATE" />
+          <ScalarProperty Name="SERI_OF_WATER_METER" ColumnName="SERI_OF_WATER_METER" />
+          <ScalarProperty Name="CUS_NAME" ColumnName="CUS_NAME" />
+          <ScalarProperty Name="ITEM_CODE" ColumnName="ITEM_CODE" />
+          <ScalarProperty Name="CUS_CODE" ColumnName="CUS_CODE" />
+          <ScalarProperty Name="PROJECT_PHASE" ColumnName="PROJECT_PHASE" />
+          <ScalarProperty Name="UNIT_CODE" ColumnName="UNIT_CODE" />
+          <ScalarProperty Name="TAX_CODE" ColumnName="TAX_CODE" />
+          <ScalarProperty Name="DESCRIPTION_VN" ColumnName="DESCRIPTION_VN" />
+          <ScalarProperty Name="DESCRIPTION_EN" ColumnName="DESCRIPTION_EN" />
+          <ScalarProperty Name="FIRST_INDEX" ColumnName="FIRST_INDEX" />
+          <ScalarProperty Name="LAST_INDEX" ColumnName="LAST_INDEX" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="UNIT_PRICE" ColumnName="UNIT_PRICE" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="TYGIA" ColumnName="TYGIA" />
+          <ScalarProperty Name="DU_PHONG_2" ColumnName="DU_PHONG_2" />
+          <ScalarProperty Name="DU_PHONG_3" ColumnName="DU_PHONG_3" />
+          <ScalarProperty Name="DU_PHONG_4" ColumnName="DU_PHONG_4" />
+          <ScalarProperty Name="DU_PHONG_5" ColumnName="DU_PHONG_5" />
+          <ScalarProperty Name="DU_PHONG_6" ColumnName="DU_PHONG_6" />
+          <ScalarProperty Name="DU_PHONG_7" ColumnName="DU_PHONG_7" />
+          <ScalarProperty Name="DU_PHONG_8" ColumnName="DU_PHONG_8" />
+          <ScalarProperty Name="DU_PHONG_9" ColumnName="DU_PHONG_9" />
+          <ScalarProperty Name="DU_PHONG_10" ColumnName="DU_PHONG_10" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Books">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Books">
+        <MappingFragment StoreEntitySet="t_Books">
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="BookName" ColumnName="BookName" />
+          <ScalarProperty Name="ConfirmDay" ColumnName="ConfirmDay" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Disable" ColumnName="Disable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Channel_Configurations">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Channel_Configurations">
+        <MappingFragment StoreEntitySet="t_Channel_Configurations">
+          <ScalarProperty Name="ChannelId" ColumnName="ChannelId" />
+          <ScalarProperty Name="LoggerId" ColumnName="LoggerId" />
+          <ScalarProperty Name="ChannelName" ColumnName="ChannelName" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Pressure1" ColumnName="Pressure1" />
+          <ScalarProperty Name="Pressure2" ColumnName="Pressure2" />
+          <ScalarProperty Name="ForwardFlow" ColumnName="ForwardFlow" />
+          <ScalarProperty Name="ReverseFlow" ColumnName="ReverseFlow" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="LastValue" ColumnName="LastValue" />
+          <ScalarProperty Name="IndexTimeStamp" ColumnName="IndexTimeStamp" />
+          <ScalarProperty Name="LastIndex" ColumnName="LastIndex" />
+          <ScalarProperty Name="DisplayOnLabel" ColumnName="DisplayOnLabel" />
+          <ScalarProperty Name="ChannelOther" ColumnName="ChannelOther" />
+          <ScalarProperty Name="basemin" ColumnName="basemin" />
+          <ScalarProperty Name="basemax" ColumnName="basemax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Consumers">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Consumers">
+        <MappingFragment StoreEntitySet="t_Consumers">
+          <ScalarProperty Name="ConsumerId" ColumnName="ConsumerId" />
+          <ScalarProperty Name="Zoom" ColumnName="Zoom" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SetDefault" ColumnName="SetDefault" />
+          <ScalarProperty Name="Acronym" ColumnName="Acronym" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Career" ColumnName="Career" />
+          <ScalarProperty Name="DMA" ColumnName="DMA" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Currency">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Currency">
+        <MappingFragment StoreEntitySet="t_Currency">
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="CashCost" ColumnName="CashCost" />
+          <ScalarProperty Name="TransferCost" ColumnName="TransferCost" />
+          <ScalarProperty Name="SaleCost" ColumnName="SaleCost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Data_Complexes">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Data_Complexes">
+        <MappingFragment StoreEntitySet="t_Data_Complexes">
+          <ScalarProperty Name="LoggerId" ColumnName="LoggerId" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="ForwardFlow" ColumnName="ForwardFlow" />
+          <ScalarProperty Name="ReverseFlow" ColumnName="ReverseFlow" />
+          <ScalarProperty Name="ForwardIndex" ColumnName="ForwardIndex" />
+          <ScalarProperty Name="ReverseIndex" ColumnName="ReverseIndex" />
+          <ScalarProperty Name="Pressure1" ColumnName="Pressure1" />
+          <ScalarProperty Name="Pressure2" ColumnName="Pressure2" />
+          <ScalarProperty Name="MinForwardFlow" ColumnName="MinForwardFlow" />
+          <ScalarProperty Name="MaxForwardFlow" ColumnName="MaxForwardFlow" />
+          <ScalarProperty Name="MinReverseFlow" ColumnName="MinReverseFlow" />
+          <ScalarProperty Name="MaxReverseFlow" ColumnName="MaxReverseFlow" />
+          <ScalarProperty Name="MinPressure1" ColumnName="MinPressure1" />
+          <ScalarProperty Name="MaxPressure1" ColumnName="MaxPressure1" />
+          <ScalarProperty Name="MinPressure2" ColumnName="MinPressure2" />
+          <ScalarProperty Name="MaxPressure2" ColumnName="MaxPressure2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_DisplayGroups">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_DisplayGroups">
+        <MappingFragment StoreEntitySet="t_DisplayGroups">
+          <ScalarProperty Name="Group" ColumnName="Group" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Emails">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Emails">
+        <MappingFragment StoreEntitySet="t_Emails">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Function">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Function">
+        <MappingFragment StoreEntitySet="t_Function">
+          <ScalarProperty Name="FunctionId" ColumnName="FunctionId" />
+          <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="IsOnMenu" ColumnName="IsOnMenu" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Sort" ColumnName="Sort" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Language">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Language">
+        <MappingFragment StoreEntitySet="t_Language">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LangCode" ColumnName="LangCode" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Noted" ColumnName="Noted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_LanguageTranslate">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_LanguageTranslate">
+        <MappingFragment StoreEntitySet="t_LanguageTranslate">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ControlId" ColumnName="ControlId" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="Noted" ColumnName="Noted" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Logger_Configurations">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Logger_Configurations">
+        <MappingFragment StoreEntitySet="t_Logger_Configurations">
+          <ScalarProperty Name="LoggerId" ColumnName="LoggerId" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="StartHour" ColumnName="StartHour" />
+          <ScalarProperty Name="TelephoneNumber" ColumnName="TelephoneNumber" />
+          <ScalarProperty Name="Pressure1" ColumnName="Pressure1" />
+          <ScalarProperty Name="Pressure2" ColumnName="Pressure2" />
+          <ScalarProperty Name="ForwardFlow" ColumnName="ForwardFlow" />
+          <ScalarProperty Name="ReverseFlow" ColumnName="ReverseFlow" />
+          <ScalarProperty Name="Alarm" ColumnName="Alarm" />
+          <ScalarProperty Name="TimeDelayAlarm" ColumnName="TimeDelayAlarm" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="Status1" ColumnName="Status1" />
+          <ScalarProperty Name="Status2" ColumnName="Status2" />
+          <ScalarProperty Name="TimeOffset" ColumnName="TimeOffset" />
+          <ScalarProperty Name="ChannelOther" ColumnName="ChannelOther" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Logger_Files">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Logger_Files">
+        <MappingFragment StoreEntitySet="t_Logger_Files">
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="LoggerSerial" ColumnName="LoggerSerial" />
+          <ScalarProperty Name="MIMEType" ColumnName="MIMEType" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Logger_Histories">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Logger_Histories">
+        <MappingFragment StoreEntitySet="t_Logger_Histories">
+          <ScalarProperty Name="HistoryID" ColumnName="HistoryID" />
+          <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+          <ScalarProperty Name="DateChanged" ColumnName="DateChanged" />
+          <ScalarProperty Name="OldLoggerSerial" ColumnName="OldLoggerSerial" />
+          <ScalarProperty Name="NewLoggerSerial" ColumnName="NewLoggerSerial" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Loggers">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Loggers">
+        <MappingFragment StoreEntitySet="t_Loggers">
+          <ScalarProperty Name="Serial" ColumnName="Serial" />
+          <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+          <ScalarProperty Name="Provider" ColumnName="Provider" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Installed" ColumnName="Installed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Manual_Phumy">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Manual_Phumy">
+        <MappingFragment StoreEntitySet="t_Manual_Phumy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Anh_Vy_D200" ColumnName="Anh_Vy_D200" />
+          <ScalarProperty Name="Chau_Duc_D600" ColumnName="Chau_Duc_D600" />
+          <ScalarProperty Name="Chau_Duc_D800" ColumnName="Chau_Duc_D800" />
+          <ScalarProperty Name="China_Steel" ColumnName="China_Steel" />
+          <ScalarProperty Name="DHK_Chau_Duc" ColumnName="DHK_Chau_Duc" />
+          <ScalarProperty Name="DHK_Ngoai_KCN" ColumnName="DHK_Ngoai_KCN" />
+          <ScalarProperty Name="DHK_Toc_Tien" ColumnName="DHK_Toc_Tien" />
+          <ScalarProperty Name="DHK_TT_Cap_PM1" ColumnName="DHK_TT_Cap_PM1" />
+          <ScalarProperty Name="KCN_B1_Tien_Hung" ColumnName="KCN_B1_Tien_Hung" />
+          <ScalarProperty Name="KCN_Go_Dau_DN300" ColumnName="KCN_Go_Dau_DN300" />
+          <ScalarProperty Name="KCN_MXA_2_1_DN300" ColumnName="KCN_MXA_2_1_DN300" />
+          <ScalarProperty Name="KCN_MXA_2_2_DN200" ColumnName="KCN_MXA_2_2_DN200" />
+          <ScalarProperty Name="KCN_MXA_DN300" ColumnName="KCN_MXA_DN300" />
+          <ScalarProperty Name="KCN_MXA_DN300_2" ColumnName="KCN_MXA_DN300_2" />
+          <ScalarProperty Name="KCN_Phu_My_3" ColumnName="KCN_Phu_My_3" />
+          <ScalarProperty Name="KCN_Phu_My_I_DN300_1" ColumnName="KCN_Phu_My_I_DN300_1" />
+          <ScalarProperty Name="KCN_Phu_My_I_DN300_2" ColumnName="KCN_Phu_My_I_DN300_2" />
+          <ScalarProperty Name="KCN_Phu_My_I_DN300_3" ColumnName="KCN_Phu_My_I_DN300_3" />
+          <ScalarProperty Name="Long_Son" ColumnName="Long_Son" />
+          <ScalarProperty Name="NM_Giay_MX" ColumnName="NM_Giay_MX" />
+          <ScalarProperty Name="POSCO_DN400" ColumnName="POSCO_DN400" />
+          <ScalarProperty Name="POSCO_SS" ColumnName="POSCO_SS" />
+          <ScalarProperty Name="TDC_44HA" ColumnName="TDC_44HA" />
+          <ScalarProperty Name="TTXH_D200_1" ColumnName="TTXH_D200_1" />
+          <ScalarProperty Name="TTXH_D200_2" ColumnName="TTXH_D200_2" />
+          <ScalarProperty Name="TTXH_D50" ColumnName="TTXH_D50" />
+          <ScalarProperty Name="Tuyen_Duoi_D400" ColumnName="Tuyen_Duoi_D400" />
+          <ScalarProperty Name="Tuyen_tren_D400" ColumnName="Tuyen_tren_D400" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Meter_Files">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Meter_Files">
+        <MappingFragment StoreEntitySet="t_Meter_Files">
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="MeterSerial" ColumnName="MeterSerial" />
+          <ScalarProperty Name="MIMEType" ColumnName="MIMEType" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Meter_Histories">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Meter_Histories">
+        <MappingFragment StoreEntitySet="t_Meter_Histories">
+          <ScalarProperty Name="HistoryID" ColumnName="HistoryID" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+          <ScalarProperty Name="DateChanged" ColumnName="DateChanged" />
+          <ScalarProperty Name="OldMeterSerial" ColumnName="OldMeterSerial" />
+          <ScalarProperty Name="OldAccreditation" ColumnName="OldAccreditation" />
+          <ScalarProperty Name="OldIndex" ColumnName="OldIndex" />
+          <ScalarProperty Name="LastProduction" ColumnName="LastProduction" />
+          <ScalarProperty Name="NewMeterSerial" ColumnName="NewMeterSerial" />
+          <ScalarProperty Name="NewAccreditation" ColumnName="NewAccreditation" />
+          <ScalarProperty Name="NewIndex" ColumnName="NewIndex" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Meters">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Meters">
+        <MappingFragment StoreEntitySet="t_Meters">
+          <ScalarProperty Name="Serial" ColumnName="Serial" />
+          <ScalarProperty Name="MeterType" ColumnName="MeterType" />
+          <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+          <ScalarProperty Name="Provider" ColumnName="Provider" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Installed" ColumnName="Installed" />
+          <ScalarProperty Name="AccreditationDocument" ColumnName="AccreditationDocument" />
+          <ScalarProperty Name="ApprovalDecision" ColumnName="ApprovalDecision" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="MaxIndex" ColumnName="MaxIndex" />
+          <ScalarProperty Name="AttachTransmitter" ColumnName="AttachTransmitter" />
+          <ScalarProperty Name="AttachLogger" ColumnName="AttachLogger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_MeterSetupHistories">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_MeterSetupHistories">
+        <MappingFragment StoreEntitySet="t_MeterSetupHistories">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MeterSerial" ColumnName="MeterSerial" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Site" ColumnName="Site" />
+          <ScalarProperty Name="ConsumerId" ColumnName="ConsumerId" />
+          <ScalarProperty Name="Consumer" ColumnName="Consumer" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Project_Manage">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Project_Manage">
+        <MappingFragment StoreEntitySet="t_Project_Manage">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="ConsumerId" ColumnName="ConsumerId" />
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="DisplayGroup" ColumnName="DisplayGroup" />
+          <ScalarProperty Name="OldMeterSerial" ColumnName="OldMeterSerial" />
+          <ScalarProperty Name="NewMeterSerial" ColumnName="NewMeterSerial" />
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="TimeAssign" ColumnName="TimeAssign" />
+          <ScalarProperty Name="TimeExpected" ColumnName="TimeExpected" />
+          <ScalarProperty Name="ProjectType" ColumnName="ProjectType" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TimeCompleted" ColumnName="TimeCompleted" />
+          <ScalarProperty Name="UnitCode" ColumnName="UnitCode" />
+          <ScalarProperty Name="RegisProduction" ColumnName="RegisProduction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Reading">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Reading">
+        <MappingFragment StoreEntitySet="t_Reading">
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_RoleFunction">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_RoleFunction">
+        <MappingFragment StoreEntitySet="t_RoleFunction">
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="FunctionId" ColumnName="FunctionId" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Roles">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Roles">
+        <MappingFragment StoreEntitySet="t_Roles">
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Site_Files">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Site_Files">
+        <MappingFragment StoreEntitySet="t_Site_Files">
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+          <ScalarProperty Name="MIMEType" ColumnName="MIMEType" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Sites">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Sites">
+        <MappingFragment StoreEntitySet="t_Sites">
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="SiteAliasName" ColumnName="SiteAliasName" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="DisplayGroup" ColumnName="DisplayGroup" />
+          <ScalarProperty Name="Zoom" ColumnName="Zoom" />
+          <ScalarProperty Name="ConsumerId" ColumnName="ConsumerId" />
+          <ScalarProperty Name="LoggerId" ColumnName="LoggerId" />
+          <ScalarProperty Name="StartDay" ColumnName="StartDay" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MeterSerial" ColumnName="MeterSerial" />
+          <ScalarProperty Name="TransmitterSerial" ColumnName="TransmitterSerial" />
+          <ScalarProperty Name="LoggerSerial" ColumnName="LoggerSerial" />
+          <ScalarProperty Name="MeterDateChanged" ColumnName="MeterDateChanged" />
+          <ScalarProperty Name="TransmitterDateChanged" ColumnName="TransmitterDateChanged" />
+          <ScalarProperty Name="LoggerDateChanged" ColumnName="LoggerDateChanged" />
+          <ScalarProperty Name="Availability" ColumnName="Availability" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Staffs" ColumnName="Staffs" />
+          <ScalarProperty Name="LabelAnchorX" ColumnName="LabelAnchorX" />
+          <ScalarProperty Name="LabelAnchorY" ColumnName="LabelAnchorY" />
+          <ScalarProperty Name="LabelLat" ColumnName="LabelLat" />
+          <ScalarProperty Name="LabelLng" ColumnName="LabelLng" />
+          <ScalarProperty Name="PipeSize" ColumnName="PipeSize" />
+          <ScalarProperty Name="SetDelayTime" ColumnName="SetDelayTime" />
+          <ScalarProperty Name="SetDiffValue" ColumnName="SetDiffValue" />
+          <ScalarProperty Name="Baseline" ColumnName="Baseline" />
+          <ScalarProperty Name="Using" ColumnName="Using" />
+          <ScalarProperty Name="WastePercent" ColumnName="WastePercent" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="SewUnitCost" ColumnName="SewUnitCost" />
+          <ScalarProperty Name="UnitCode" ColumnName="UnitCode" />
+          <ScalarProperty Name="PhaseCode" ColumnName="PhaseCode" />
+          <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+          <ScalarProperty Name="SewTaxCode" ColumnName="SewTaxCode" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="RouteId" ColumnName="RouteId" />
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="Disable" ColumnName="Disable" />
+          <ScalarProperty Name="FirstIndex" ColumnName="FirstIndex" />
+          <ScalarProperty Name="OpenDate" ColumnName="OpenDate" />
+          <ScalarProperty Name="CloseDate" ColumnName="CloseDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_SiteSetupHistories">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_SiteSetupHistories">
+        <MappingFragment StoreEntitySet="t_SiteSetupHistories">
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Site" ColumnName="Site" />
+          <ScalarProperty Name="ConsumerId" ColumnName="ConsumerId" />
+          <ScalarProperty Name="Consumer" ColumnName="Consumer" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Staffs">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Staffs">
+        <MappingFragment StoreEntitySet="t_Staffs">
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="TelephoneNumber" ColumnName="TelephoneNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Sites" ColumnName="Sites" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_SysParam">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_SysParam">
+        <MappingFragment StoreEntitySet="t_SysParam">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Val" ColumnName="Val" />
+          <ScalarProperty Name="Val2" ColumnName="Val2" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsSystem" ColumnName="IsSystem" />
+          <ScalarProperty Name="Activated" ColumnName="Activated" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_TaxCode">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_TaxCode">
+        <MappingFragment StoreEntitySet="t_TaxCode">
+          <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Transmitter_Histories">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Transmitter_Histories">
+        <MappingFragment StoreEntitySet="t_Transmitter_Histories">
+          <ScalarProperty Name="HistoryID" ColumnName="HistoryID" />
+          <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+          <ScalarProperty Name="DateChanged" ColumnName="DateChanged" />
+          <ScalarProperty Name="OldTransmitterSerial" ColumnName="OldTransmitterSerial" />
+          <ScalarProperty Name="OldAccreditation" ColumnName="OldAccreditation" />
+          <ScalarProperty Name="NewTransmitterSerial" ColumnName="NewTransmitterSerial" />
+          <ScalarProperty Name="NewAccreditation" ColumnName="NewAccreditation" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Transmitters">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Transmitters">
+        <MappingFragment StoreEntitySet="t_Transmitters">
+          <ScalarProperty Name="Serial" ColumnName="Serial" />
+          <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+          <ScalarProperty Name="Provider" ColumnName="Provider" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Installed" ColumnName="Installed" />
+          <ScalarProperty Name="AccreditationDocument" ColumnName="AccreditationDocument" />
+          <ScalarProperty Name="ApprovalDecision" ColumnName="ApprovalDecision" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_UnitCode">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_UnitCode">
+        <MappingFragment StoreEntitySet="t_UnitCode">
+          <ScalarProperty Name="UnitCode" ColumnName="UnitCode" />
+          <ScalarProperty Name="ConsumerId" ColumnName="ConsumerId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Threshold" ColumnName="Threshold" />
+          <ScalarProperty Name="OverloadUnitCost" ColumnName="OverloadUnitCost" />
+          <ScalarProperty Name="ComplexStringWTR" ColumnName="ComplexStringWTR" />
+          <ScalarProperty Name="ComplexStringSEW" ColumnName="ComplexStringSEW" />
+          <ScalarProperty Name="IsSeparateInvoice" ColumnName="IsSeparateInvoice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_UnitCost">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_UnitCost">
+        <MappingFragment StoreEntitySet="t_UnitCost">
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Units">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Units">
+        <MappingFragment StoreEntitySet="t_Units">
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Users">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Users">
+        <MappingFragment StoreEntitySet="t_Users">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Salt" ColumnName="Salt" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="ConsumerId" ColumnName="ConsumerId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="DisplayGroup" ColumnName="DisplayGroup" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_UsingDiary">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_UsingDiary">
+        <MappingFragment StoreEntitySet="t_UsingDiary">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_WasteWaterPercent">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_WasteWaterPercent">
+        <MappingFragment StoreEntitySet="t_WasteWaterPercent">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WastePercent" ColumnName="WastePercent" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ClockRecord">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_ClockRecord">
+        <MappingFragment StoreEntitySet="tbl_ClockRecord">
+          <ScalarProperty Name="ClockRecordID" ColumnName="ClockRecordID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="FirstNumber" ColumnName="FirstNumber" />
+          <ScalarProperty Name="LastNumber" ColumnName="LastNumber" />
+          <ScalarProperty Name="FirstDate" ColumnName="FirstDate" />
+          <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+          <ScalarProperty Name="UsageNumber" ColumnName="UsageNumber" />
+          <ScalarProperty Name="ArrearsQuantity" ColumnName="ArrearsQuantity" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="RecordTime" ColumnName="RecordTime" />
+          <ScalarProperty Name="InputTime" ColumnName="InputTime" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="User_Input" ColumnName="User_Input" />
+          <ScalarProperty Name="LastNumber_Mobile" ColumnName="LastNumber_Mobile" />
+          <ScalarProperty Name="StatusCode_Mobile" ColumnName="StatusCode_Mobile" />
+          <ScalarProperty Name="LastFirstStatusCode" ColumnName="LastFirstStatusCode" />
+          <ScalarProperty Name="LastFirstUsageNumber" ColumnName="LastFirstUsageNumber" />
+          <ScalarProperty Name="LastSecondStatusCode" ColumnName="LastSecondStatusCode" />
+          <ScalarProperty Name="LastSecondUsageNumber" ColumnName="LastSecondUsageNumber" />
+          <ScalarProperty Name="LastThirdStatusCode" ColumnName="LastThirdStatusCode" />
+          <ScalarProperty Name="LastThirdUsageNumber" ColumnName="LastThirdUsageNumber" />
+          <ScalarProperty Name="AvgUseNumber" ColumnName="AvgUseNumber" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="StatusLockBook" ColumnName="StatusLockBook" />
+          <ScalarProperty Name="ImageSource" ColumnName="ImageSource" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="LockedStatus" ColumnName="LockedStatus" />
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ClockRecord_History">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_ClockRecord_History">
+        <MappingFragment StoreEntitySet="tbl_ClockRecord_History">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="LastNumber" ColumnName="LastNumber" />
+          <ScalarProperty Name="RecordTime" ColumnName="RecordTime" />
+          <ScalarProperty Name="InputTime" ColumnName="InputTime" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="User_Input" ColumnName="User_Input" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ClockRecord_Mobile">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_ClockRecord_Mobile">
+        <MappingFragment StoreEntitySet="tbl_ClockRecord_Mobile">
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="LastNumber" ColumnName="LastNumber" />
+          <ScalarProperty Name="RecordTime" ColumnName="RecordTime" />
+          <ScalarProperty Name="InputTime" ColumnName="InputTime" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="User_Input" ColumnName="User_Input" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="ImageSource" ColumnName="ImageSource" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ClockRecordRoute">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_ClockRecordRoute">
+        <MappingFragment StoreEntitySet="tbl_ClockRecordRoute">
+          <ScalarProperty Name="BRID" ColumnName="BRID" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="ClockStatus" ColumnName="ClockStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ClockRepair">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_ClockRepair">
+        <MappingFragment StoreEntitySet="tbl_ClockRepair">
+          <ScalarProperty Name="RepairID" ColumnName="RepairID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+          <ScalarProperty Name="GiveDate" ColumnName="GiveDate" />
+          <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+          <ScalarProperty Name="ClockCode" ColumnName="ClockCode" />
+          <ScalarProperty Name="ClockTypeID" ColumnName="ClockTypeID" />
+          <ScalarProperty Name="NewFirstNumber" ColumnName="NewFirstNumber" />
+          <ScalarProperty Name="OldLastNumber" ColumnName="OldLastNumber" />
+          <ScalarProperty Name="Cause" ColumnName="Cause" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ClockRepairContent">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_ClockRepairContent">
+        <MappingFragment StoreEntitySet="tbl_ClockRepairContent">
+          <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+          <ScalarProperty Name="ContentCode" ColumnName="ContentCode" />
+          <ScalarProperty Name="ContentName" ColumnName="ContentName" />
+          <ScalarProperty Name="ContentDescr" ColumnName="ContentDescr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ClockType">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_ClockType">
+        <MappingFragment StoreEntitySet="tbl_ClockType">
+          <ScalarProperty Name="ClockTypeID" ColumnName="ClockTypeID" />
+          <ScalarProperty Name="ClockTypeCode" ColumnName="ClockTypeCode" />
+          <ScalarProperty Name="ClockTypeDescr" ColumnName="ClockTypeDescr" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Contract">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_Contract">
+        <MappingFragment StoreEntitySet="tbl_Contract">
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+          <ScalarProperty Name="ContractType" ColumnName="ContractType" />
+          <ScalarProperty Name="RegisterID" ColumnName="RegisterID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="ValidDate" ColumnName="ValidDate" />
+          <ScalarProperty Name="ContractStatus" ColumnName="ContractStatus" />
+          <ScalarProperty Name="ApplyDate" ColumnName="ApplyDate" />
+          <ScalarProperty Name="ClockCode" ColumnName="ClockCode" />
+          <ScalarProperty Name="ClockTypeID" ColumnName="ClockTypeID" />
+          <ScalarProperty Name="LastClockCheck" ColumnName="LastClockCheck" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+          <ScalarProperty Name="ZoneCode" ColumnName="ZoneCode" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Disable" ColumnName="Disable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Customer">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_Customer">
+        <MappingFragment StoreEntitySet="tbl_Customer">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CustomerRoute">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_CustomerRoute">
+        <MappingFragment StoreEntitySet="tbl_CustomerRoute">
+          <ScalarProperty Name="CustomerRouteID" ColumnName="CustomerRouteID" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="IndexOrder" ColumnName="IndexOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CustomerType">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_CustomerType">
+        <MappingFragment StoreEntitySet="tbl_CustomerType">
+          <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
+          <ScalarProperty Name="CustomerTypeCode" ColumnName="CustomerTypeCode" />
+          <ScalarProperty Name="CustomerTypeName" ColumnName="CustomerTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Employee">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_Employee">
+        <MappingFragment StoreEntitySet="tbl_Employee">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmployeeFullName" ColumnName="EmployeeFullName" />
+          <ScalarProperty Name="EmployeePhone" ColumnName="EmployeePhone" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsMobile" ColumnName="IsMobile" />
+          <ScalarProperty Name="Imei1" ColumnName="Imei1" />
+          <ScalarProperty Name="Imei2" ColumnName="Imei2" />
+          <ScalarProperty Name="PrinterID" ColumnName="PrinterID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EmployeeRoute">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_EmployeeRoute">
+        <MappingFragment StoreEntitySet="tbl_EmployeeRoute">
+          <ScalarProperty Name="EmployeeRouteID" ColumnName="EmployeeRouteID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="AssignDate" ColumnName="AssignDate" />
+          <ScalarProperty Name="Received" ColumnName="Received" />
+          <ScalarProperty Name="Send" ColumnName="Send" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_MobileAdmin">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_MobileAdmin">
+        <MappingFragment StoreEntitySet="tbl_MobileAdmin">
+          <ScalarProperty Name="Imei" ColumnName="Imei" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Period">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_Period">
+        <MappingFragment StoreEntitySet="tbl_Period">
+          <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Register">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_Register">
+        <MappingFragment StoreEntitySet="tbl_Register">
+          <ScalarProperty Name="RegisterID" ColumnName="RegisterID" />
+          <ScalarProperty Name="RegisterCode" ColumnName="RegisterCode" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="RegisterType" ColumnName="RegisterType" />
+          <ScalarProperty Name="BuildAddress" ColumnName="BuildAddress" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ApproveDate" ColumnName="ApproveDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="ContractStatus" ColumnName="ContractStatus" />
+          <ScalarProperty Name="DesignImageSource" ColumnName="DesignImageSource" />
+          <ScalarProperty Name="LetterApproveSource" ColumnName="LetterApproveSource" />
+          <ScalarProperty Name="FormRegisterSouce" ColumnName="FormRegisterSouce" />
+          <ScalarProperty Name="UserModifyDate" ColumnName="UserModifyDate" />
+          <ScalarProperty Name="UserModifyName" ColumnName="UserModifyName" />
+          <ScalarProperty Name="RepresentativeName" ColumnName="RepresentativeName" />
+          <ScalarProperty Name="TradeTitle" ColumnName="TradeTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Route">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_Route">
+        <MappingFragment StoreEntitySet="tbl_Route">
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="RouteCode" ColumnName="RouteCode" />
+          <ScalarProperty Name="RouteName" ColumnName="RouteName" />
+          <ScalarProperty Name="DisplayGroup" ColumnName="DisplayGroup" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Status">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_Status">
+        <MappingFragment StoreEntitySet="tbl_Status">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="StatusDescr" ColumnName="StatusDescr" />
+          <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+          <ScalarProperty Name="IsPublish" ColumnName="IsPublish" />
+          <ScalarProperty Name="No" ColumnName="No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_UpdateClockSeries">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_UpdateClockSeries">
+        <MappingFragment StoreEntitySet="tbl_UpdateClockSeries">
+          <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="ClockCode" ColumnName="ClockCode" />
+          <ScalarProperty Name="ApplyDate" ColumnName="ApplyDate" />
+          <ScalarProperty Name="FirstNum" ColumnName="FirstNum" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="ModifyUser" ColumnName="ModifyUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Zone">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.tbl_Zone">
+        <MappingFragment StoreEntitySet="tbl_Zone">
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="ZoneCode" ColumnName="ZoneCode" />
+          <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_Location">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.temp_Location">
+        <MappingFragment StoreEntitySet="temp_Location">
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Long" ColumnName="Long" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="test_1990">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.test_1990">
+        <MappingFragment StoreEntitySet="test_1990">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Device_Status">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Device_Status">
+        <MappingFragment StoreEntitySet="t_Device_Status">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Project_Progress">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Project_Progress">
+        <MappingFragment StoreEntitySet="t_Project_Progress">
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="NgayDaChapThuan" ColumnName="NgayDaChapThuan" />
+          <ScalarProperty Name="NgayChoDauNoi" ColumnName="NgayChoDauNoi" />
+          <ScalarProperty Name="NgayTienHanhDauNoi" ColumnName="NgayTienHanhDauNoi" />
+          <ScalarProperty Name="NgayKeToan" ColumnName="NgayKeToan" />
+          <ScalarProperty Name="NgayHSNT" ColumnName="NgayHSNT" />
+          <ScalarProperty Name="NgayHT" ColumnName="NgayHT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Site_Availabilities">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Site_Availabilities">
+        <MappingFragment StoreEntitySet="t_Site_Availabilities">
+          <ScalarProperty Name="Availability" ColumnName="Availability" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="t_Site_Status">
+      <EntityTypeMapping TypeName="KG_ClockRecordModel.t_Site_Status">
+        <MappingFragment StoreEntitySet="t_Site_Status">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CustomSearch" FunctionName="KG_ClockRecordModel.Store.CustomSearch" />
+    <FunctionImportMapping FunctionImportName="DataInsert" FunctionName="KG_ClockRecordModel.Store.DataInsert" />
+    <FunctionImportMapping FunctionImportName="DataXMLInsert" FunctionName="KG_ClockRecordModel.Store.DataXMLInsert" />
+    <FunctionImportMapping FunctionImportName="delete_complexdata" FunctionName="KG_ClockRecordModel.Store.delete_complexdata" />
+    <FunctionImportMapping FunctionImportName="p_Calculate_One_Site_Daily_Output" FunctionName="KG_ClockRecordModel.Store.p_Calculate_One_Site_Daily_Output" />
+    <FunctionImportMapping FunctionImportName="p_Calculate_One_Site_Hourly_Output" FunctionName="KG_ClockRecordModel.Store.p_Calculate_One_Site_Hourly_Output" />
+    <FunctionImportMapping FunctionImportName="p_Calculate_One_Site_Monthly_Output" FunctionName="KG_ClockRecordModel.Store.p_Calculate_One_Site_Monthly_Output" />
+    <FunctionImportMapping FunctionImportName="p_Calculate_One_Site_Yearly_Output" FunctionName="KG_ClockRecordModel.Store.p_Calculate_One_Site_Yearly_Output" />
+    <FunctionImportMapping FunctionImportName="p_Channel_Configuration" FunctionName="KG_ClockRecordModel.Store.p_Channel_Configuration" />
+    <FunctionImportMapping FunctionImportName="p_ComplexData_Select_Faster" FunctionName="KG_ClockRecordModel.Store.p_ComplexData_Select_Faster" />
+    <FunctionImportMapping FunctionImportName="p_ComplexData_Select_For_Consumer" FunctionName="KG_ClockRecordModel.Store.p_ComplexData_Select_For_Consumer" />
+    <FunctionImportMapping FunctionImportName="p_ComplexData_Select_For_Site" FunctionName="KG_ClockRecordModel.Store.p_ComplexData_Select_For_Site" />
+    <FunctionImportMapping FunctionImportName="p_ComplexData_Select_For_Staff" FunctionName="KG_ClockRecordModel.Store.p_ComplexData_Select_For_Staff" />
+    <FunctionImportMapping FunctionImportName="p_Create_Data_Table" FunctionName="KG_ClockRecordModel.Store.p_Create_Data_Table" />
+    <FunctionImportMapping FunctionImportName="p_Data_Logger_Daily" FunctionName="KG_ClockRecordModel.Store.p_Data_Logger_Daily" />
+    <FunctionImportMapping FunctionImportName="p_Data_Logger_Get" FunctionName="KG_ClockRecordModel.Store.p_Data_Logger_Get" />
+    <FunctionImportMapping FunctionImportName="p_Data_Logger_Get_Alarm" FunctionName="KG_ClockRecordModel.Store.p_Data_Logger_Get_Alarm" />
+    <FunctionImportMapping FunctionImportName="p_Data_Logger_Hourly" FunctionName="KG_ClockRecordModel.Store.p_Data_Logger_Hourly" />
+    <FunctionImportMapping FunctionImportName="p_Data_Logger_Monthly" FunctionName="KG_ClockRecordModel.Store.p_Data_Logger_Monthly" />
+    <FunctionImportMapping FunctionImportName="p_Data_Logger_Yearly" FunctionName="KG_ClockRecordModel.Store.p_Data_Logger_Yearly" />
+    <FunctionImportMapping FunctionImportName="p_Data_ManualPhuMy_Get" FunctionName="KG_ClockRecordModel.Store.p_Data_ManualPhuMy_Get" />
+    <FunctionImportMapping FunctionImportName="p_Drop_Data_Table" FunctionName="KG_ClockRecordModel.Store.p_Drop_Data_Table" />
+    <FunctionImportMapping FunctionImportName="p_GetClockRecordSites" FunctionName="KG_ClockRecordModel.Store.p_GetClockRecordSites">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KG_ClockRecordModel.p_GetClockRecordSites_Result">
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="StatusLockBook" ColumnName="StatusLockBook" />
+          <ScalarProperty Name="ConsumerId" ColumnName="ConsumerId" />
+          <ScalarProperty Name="Staffs" ColumnName="Staffs" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="p_GetClockRecordSitesByEmployee" FunctionName="KG_ClockRecordModel.Store.p_GetClockRecordSitesByEmployee">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KG_ClockRecordModel.p_GetClockRecordSitesByEmployee_Result">
+          <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="StatusLockBook" ColumnName="StatusLockBook" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="RouteCode" ColumnName="RouteCode" />
+          <ScalarProperty Name="IndexOrder" ColumnName="IndexOrder" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="p_GetEmployeeRouter" FunctionName="KG_ClockRecordModel.Store.p_GetEmployeeRouter">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KG_ClockRecordModel.p_GetEmployeeRouter_Result">
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="RouteCode" ColumnName="RouteCode" />
+          <ScalarProperty Name="RouteName" ColumnName="RouteName" />
+          <ScalarProperty Name="DisplayGroup" ColumnName="DisplayGroup" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="EmployeeFullName" ColumnName="EmployeeFullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="p_Index_Logger_Get" FunctionName="KG_ClockRecordModel.Store.p_Index_Logger_Get" />
+    <FunctionImportMapping FunctionImportName="p_Insert_ManualData_Table" FunctionName="KG_ClockRecordModel.Store.p_Insert_ManualData_Table" />
+    <FunctionImportMapping FunctionImportName="p_Manual_Logger_Get" FunctionName="KG_ClockRecordModel.Store.p_Manual_Logger_Get" />
+    <FunctionImportMapping FunctionImportName="p_Our_Sites_Logger_As_Scada_Database" FunctionName="KG_ClockRecordModel.Store.p_Our_Sites_Logger_As_Scada_Database">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KG_ClockRecordModel.p_Our_Sites_Logger_As_Scada_Database_Result">
+          <ScalarProperty Name="LoggerId" ColumnName="LoggerId" />
+          <ScalarProperty Name="SiteAliasName" ColumnName="SiteAliasName" />
+          <ScalarProperty Name="LastTimeResponse" ColumnName="LastTimeResponse" />
+          <ScalarProperty Name="LastPress1" ColumnName="LastPress1" />
+          <ScalarProperty Name="LastPress2" ColumnName="LastPress2" />
+          <ScalarProperty Name="LastForwardFlow" ColumnName="LastForwardFlow" />
+          <ScalarProperty Name="LastIndex" ColumnName="LastIndex" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="p_Press_Get" FunctionName="KG_ClockRecordModel.Store.p_Press_Get" />
+    <FunctionImportMapping FunctionImportName="p_Press_Get_2015" FunctionName="KG_ClockRecordModel.Store.p_Press_Get_2015" />
+    <FunctionImportMapping FunctionImportName="p_Press_Getw" FunctionName="KG_ClockRecordModel.Store.p_Press_Getw" />
+    <FunctionImportMapping FunctionImportName="p_Press_Getw_Staff" FunctionName="KG_ClockRecordModel.Store.p_Press_Getw_Staff" />
+    <FunctionImportMapping FunctionImportName="p_Reading_Report" FunctionName="KG_ClockRecordModel.Store.p_Reading_Report" />
+    <FunctionImportMapping FunctionImportName="ProductsAccessXMLInsertDataComplex" FunctionName="KG_ClockRecordModel.Store.ProductsAccessXMLInsertDataComplex" />
+    <FunctionImportMapping FunctionImportName="Service_GetClockRecordByRoute" FunctionName="KG_ClockRecordModel.Store.Service_GetClockRecordByRoute">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="KG_ClockRecordModel.Service_GetClockRecordByRoute_Result">
+          <ScalarProperty Name="Period" ColumnName="Period" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+          <ScalarProperty Name="RouteCode" ColumnName="RouteCode" />
+          <ScalarProperty Name="ContractID" ColumnName="ContractID" />
+          <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="BuildAddress" ColumnName="BuildAddress" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="ContractType" ColumnName="ContractType" />
+          <ScalarProperty Name="ClockTypeDescr" ColumnName="ClockTypeDescr" />
+          <ScalarProperty Name="ClockCode" ColumnName="ClockCode" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="IndexOrder" ColumnName="IndexOrder" />
+          <ScalarProperty Name="FirstNumber" ColumnName="FirstNumber" />
+          <ScalarProperty Name="LastNumber" ColumnName="LastNumber" />
+          <ScalarProperty Name="LastFirstStatusCode" ColumnName="LastFirstStatusCode" />
+          <ScalarProperty Name="LastFirstStatusDescr" ColumnName="LastFirstStatusDescr" />
+          <ScalarProperty Name="LastFirstUsageNumber" ColumnName="LastFirstUsageNumber" />
+          <ScalarProperty Name="LastSecondStatusCode" ColumnName="LastSecondStatusCode" />
+          <ScalarProperty Name="LastSecondStatusDescr" ColumnName="LastSecondStatusDescr" />
+          <ScalarProperty Name="LastSecondUsageNumber" ColumnName="LastSecondUsageNumber" />
+          <ScalarProperty Name="LastThirdStatusCode" ColumnName="LastThirdStatusCode" />
+          <ScalarProperty Name="LastThirdStatusDescr" ColumnName="LastThirdStatusDescr" />
+          <ScalarProperty Name="LastThirdUsageNumber" ColumnName="LastThirdUsageNumber" />
+          <ScalarProperty Name="RecordTime" ColumnName="RecordTime" />
+          <ScalarProperty Name="InputTime" ColumnName="InputTime" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AvgUseNum" ColumnName="AvgUseNum" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="ZoneCode" ColumnName="ZoneCode" />
+          <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+          <ScalarProperty Name="ImageSource" ColumnName="ImageSource" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="TyLeVuot" ColumnName="TyLeVuot" />
+          <ScalarProperty Name="KhuVuc" ColumnName="KhuVuc" />
+          <ScalarProperty Name="TenKhachhang" ColumnName="TenKhachhang" />
+          <ScalarProperty Name="TenDiemDo" ColumnName="TenDiemDo" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="TenDonGia" ColumnName="TenDonGia" />
+          <ScalarProperty Name="TyleNuocThai" ColumnName="TyleNuocThai" />
+          <ScalarProperty Name="TaiKhoanKH" ColumnName="TaiKhoanKH" />
+          <ScalarProperty Name="MatKhauKH" ColumnName="MatKhauKH" />
+          <ScalarProperty Name="FirstDate" ColumnName="FirstDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
