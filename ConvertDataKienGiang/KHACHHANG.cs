@@ -73,5 +73,8 @@ namespace ConvertDataKienGiang
         public string MAVUNG { get; set; }
     
         public virtual ICollection<TIEUTHU> TIEUTHUs { get; set; }
+        public virtual DUONGPHO DUONGPHO { get; set; }
+        public virtual KHUVUC KHUVUC { get; set; }
+        public virtual PHUONG PHUONG { get; set; }
     }
 }

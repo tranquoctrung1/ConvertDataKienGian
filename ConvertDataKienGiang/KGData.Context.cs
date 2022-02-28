@@ -27,5 +27,8 @@ namespace ConvertDataKienGiang
     
         public DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public DbSet<TIEUTHU> TIEUTHUs { get; set; }
+        public DbSet<DUONGPHO> DUONGPHOes { get; set; }
+        public DbSet<KHUVUC> KHUVUCs { get; set; }
+        public DbSet<PHUONG> PHUONGs { get; set; }
     }
 }

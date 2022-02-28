@@ -25,6 +25,8 @@ namespace ConvertDataKienGiang.Action
                                     select new 
                                     {
                                         ContractID = ct.ContractID,
+
+
                                     }
                                     ).ToList();
 

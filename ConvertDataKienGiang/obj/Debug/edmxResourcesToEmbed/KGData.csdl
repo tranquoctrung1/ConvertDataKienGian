@@ -57,6 +57,9 @@
     <Property Name="NGAYHETHANDH" Type="DateTime" Precision="3" />
     <Property Name="MAVUNG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="TIEUTHUs" Relationship="Self.FK_TIEUTHU_KHACHHANG" FromRole="KHACHHANG" ToRole="TIEUTHU" />
+    <NavigationProperty Name="DUONGPHO" Relationship="EOSKG_WebAppModel.FK_KHACHHANG_DUONGPHO" FromRole="KHACHHANG" ToRole="DUONGPHO" />
+    <NavigationProperty Name="KHUVUC" Relationship="EOSKG_WebAppModel.FK_KHACHHANG_KHUVUC" FromRole="KHACHHANG" ToRole="KHUVUC" />
+    <NavigationProperty Name="PHUONG" Relationship="EOSKG_WebAppModel.FK_KHACHHANG_PHUONG" FromRole="KHACHHANG" ToRole="PHUONG" />
   </EntityType>
   <EntityType Name="TIEUTHU">
     <Key>
@@ -158,6 +161,8 @@
     <Property Name="ISPHATSINH_HDDIENTU" Type="Boolean" />
     <Property Name="ISGIATN" Type="Boolean" />
     <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_TIEUTHU_KHACHHANG" FromRole="TIEUTHU" ToRole="KHACHHANG" />
+    <NavigationProperty Name="DUONGPHO" Relationship="EOSKG_WebAppModel.FK_TIEUTHU_DUONGPHO" FromRole="TIEUTHU" ToRole="DUONGPHO" />
+    <NavigationProperty Name="KHUVUC" Relationship="EOSKG_WebAppModel.FK_TIEUTHU_KHUVUC" FromRole="TIEUTHU" ToRole="KHUVUC" />
   </EntityType>
   <Association Name="FK_TIEUTHU_KHACHHANG">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
@@ -178,5 +183,186 @@
       <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
       <End Role="TIEUTHU" EntitySet="TIEUTHUs" />
     </AssociationSet>
+    <EntitySet Name="DUONGPHOes" EntityType="EOSKG_WebAppModel.DUONGPHO" />
+    <EntitySet Name="KHUVUCs" EntityType="EOSKG_WebAppModel.KHUVUC" />
+    <EntitySet Name="PHUONGs" EntityType="EOSKG_WebAppModel.PHUONG" />
+    <AssociationSet Name="FK_DUONGPHO_DUONGPHO" Association="EOSKG_WebAppModel.FK_DUONGPHO_DUONGPHO">
+      <End Role="PHUONG" EntitySet="PHUONGs" />
+      <End Role="DUONGPHO" EntitySet="DUONGPHOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DUONGPHO_KHUVUC" Association="EOSKG_WebAppModel.FK_DUONGPHO_KHUVUC">
+      <End Role="KHUVUC" EntitySet="KHUVUCs" />
+      <End Role="DUONGPHO" EntitySet="DUONGPHOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACHHANG_DUONGPHO" Association="EOSKG_WebAppModel.FK_KHACHHANG_DUONGPHO">
+      <End Role="DUONGPHO" EntitySet="DUONGPHOes" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TIEUTHU_DUONGPHO" Association="EOSKG_WebAppModel.FK_TIEUTHU_DUONGPHO">
+      <End Role="DUONGPHO" EntitySet="DUONGPHOes" />
+      <End Role="TIEUTHU" EntitySet="TIEUTHUs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACHHANG_KHUVUC" Association="EOSKG_WebAppModel.FK_KHACHHANG_KHUVUC">
+      <End Role="KHUVUC" EntitySet="KHUVUCs" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACHHANG_PHUONG" Association="EOSKG_WebAppModel.FK_KHACHHANG_PHUONG">
+      <End Role="PHUONG" EntitySet="PHUONGs" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHUONG_KHUVUC" Association="EOSKG_WebAppModel.FK_PHUONG_KHUVUC">
+      <End Role="KHUVUC" EntitySet="KHUVUCs" />
+      <End Role="PHUONG" EntitySet="PHUONGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TIEUTHU_KHUVUC" Association="EOSKG_WebAppModel.FK_TIEUTHU_KHUVUC">
+      <End Role="KHUVUC" EntitySet="KHUVUCs" />
+      <End Role="TIEUTHU" EntitySet="TIEUTHUs" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="DUONGPHO">
+    <Key>
+      <PropertyRef Name="MADP" />
+      <PropertyRef Name="DUONGPHU" />
+    </Key>
+    <Property Name="MADP" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DUONGPHU" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="TENDP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TENHD" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MAKV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MAPHUONG" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="TENPHUONG" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PHUONG" Relationship="EOSKG_WebAppModel.FK_DUONGPHO_DUONGPHO" FromRole="DUONGPHO" ToRole="PHUONG" />
+    <NavigationProperty Name="KHUVUC" Relationship="EOSKG_WebAppModel.FK_DUONGPHO_KHUVUC" FromRole="DUONGPHO" ToRole="KHUVUC" />
+    <NavigationProperty Name="KHACHHANGs" Relationship="EOSKG_WebAppModel.FK_KHACHHANG_DUONGPHO" FromRole="DUONGPHO" ToRole="KHACHHANG" />
+    <NavigationProperty Name="TIEUTHUs" Relationship="EOSKG_WebAppModel.FK_TIEUTHU_DUONGPHO" FromRole="DUONGPHO" ToRole="TIEUTHU" />
+  </EntityType>
+  <EntityType Name="KHUVUC">
+    <Key>
+      <PropertyRef Name="MAKV" />
+    </Key>
+    <Property Name="MAKV" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TENKV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="THUTU" Type="Int32" />
+    <Property Name="HIENTHI" Type="Boolean" />
+    <Property Name="NHOMKV" Type="Int32" />
+    <Property Name="HSVATTU" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="HSNC" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="MAHD" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DUONGPHOes" Relationship="EOSKG_WebAppModel.FK_DUONGPHO_KHUVUC" FromRole="KHUVUC" ToRole="DUONGPHO" />
+    <NavigationProperty Name="KHACHHANGs" Relationship="EOSKG_WebAppModel.FK_KHACHHANG_KHUVUC" FromRole="KHUVUC" ToRole="KHACHHANG" />
+    <NavigationProperty Name="PHUONGs" Relationship="EOSKG_WebAppModel.FK_PHUONG_KHUVUC" FromRole="KHUVUC" ToRole="PHUONG" />
+    <NavigationProperty Name="TIEUTHUs" Relationship="EOSKG_WebAppModel.FK_TIEUTHU_KHUVUC" FromRole="KHUVUC" ToRole="TIEUTHU" />
+  </EntityType>
+  <EntityType Name="PHUONG">
+    <Key>
+      <PropertyRef Name="MAPHUONG" />
+    </Key>
+    <Property Name="MAPHUONG" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="TENPHUONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MAKV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="THUTUIN" Type="Int32" />
+    <NavigationProperty Name="DUONGPHOes" Relationship="EOSKG_WebAppModel.FK_DUONGPHO_DUONGPHO" FromRole="PHUONG" ToRole="DUONGPHO" />
+    <NavigationProperty Name="KHACHHANGs" Relationship="EOSKG_WebAppModel.FK_KHACHHANG_PHUONG" FromRole="PHUONG" ToRole="KHACHHANG" />
+    <NavigationProperty Name="KHUVUC" Relationship="EOSKG_WebAppModel.FK_PHUONG_KHUVUC" FromRole="PHUONG" ToRole="KHUVUC" />
+  </EntityType>
+  <Association Name="FK_DUONGPHO_DUONGPHO">
+    <End Type="EOSKG_WebAppModel.PHUONG" Role="PHUONG" Multiplicity="0..1" />
+    <End Type="EOSKG_WebAppModel.DUONGPHO" Role="DUONGPHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHUONG">
+        <PropertyRef Name="MAPHUONG" />
+      </Principal>
+      <Dependent Role="DUONGPHO">
+        <PropertyRef Name="MAPHUONG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DUONGPHO_KHUVUC">
+    <End Type="EOSKG_WebAppModel.KHUVUC" Role="KHUVUC" Multiplicity="0..1" />
+    <End Type="EOSKG_WebAppModel.DUONGPHO" Role="DUONGPHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUVUC">
+        <PropertyRef Name="MAKV" />
+      </Principal>
+      <Dependent Role="DUONGPHO">
+        <PropertyRef Name="MAKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHACHHANG_DUONGPHO">
+    <End Type="EOSKG_WebAppModel.DUONGPHO" Role="DUONGPHO" Multiplicity="0..1" />
+    <End Type="EOSKG_WebAppModel.KHACHHANG" Role="KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DUONGPHO">
+        <PropertyRef Name="MADP" />
+        <PropertyRef Name="DUONGPHU" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="MADP" />
+        <PropertyRef Name="DUONGPHU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TIEUTHU_DUONGPHO">
+    <End Type="EOSKG_WebAppModel.DUONGPHO" Role="DUONGPHO" Multiplicity="1" />
+    <End Type="EOSKG_WebAppModel.TIEUTHU" Role="TIEUTHU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DUONGPHO">
+        <PropertyRef Name="MADP" />
+        <PropertyRef Name="DUONGPHU" />
+      </Principal>
+      <Dependent Role="TIEUTHU">
+        <PropertyRef Name="MADP" />
+        <PropertyRef Name="DUONGPHU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHACHHANG_KHUVUC">
+    <End Type="EOSKG_WebAppModel.KHUVUC" Role="KHUVUC" Multiplicity="0..1" />
+    <End Type="EOSKG_WebAppModel.KHACHHANG" Role="KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUVUC">
+        <PropertyRef Name="MAKV" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="MAKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHACHHANG_PHUONG">
+    <End Type="EOSKG_WebAppModel.PHUONG" Role="PHUONG" Multiplicity="0..1" />
+    <End Type="EOSKG_WebAppModel.KHACHHANG" Role="KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHUONG">
+        <PropertyRef Name="MAPHUONG" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="MAPHUONG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHUONG_KHUVUC">
+    <End Type="EOSKG_WebAppModel.KHUVUC" Role="KHUVUC" Multiplicity="0..1" />
+    <End Type="EOSKG_WebAppModel.PHUONG" Role="PHUONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUVUC">
+        <PropertyRef Name="MAKV" />
+      </Principal>
+      <Dependent Role="PHUONG">
+        <PropertyRef Name="MAKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TIEUTHU_KHUVUC">
+    <End Type="EOSKG_WebAppModel.KHUVUC" Role="KHUVUC" Multiplicity="1" />
+    <End Type="EOSKG_WebAppModel.TIEUTHU" Role="TIEUTHU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUVUC">
+        <PropertyRef Name="MAKV" />
+      </Principal>
+      <Dependent Role="TIEUTHU">
+        <PropertyRef Name="MAKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

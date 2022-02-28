@@ -109,5 +109,7 @@ namespace ConvertDataKienGiang
         public Nullable<bool> ISGIATN { get; set; }
     
         public virtual KHACHHANG KHACHHANG { get; set; }
+        public virtual DUONGPHO DUONGPHO { get; set; }
+        public virtual KHUVUC KHUVUC { get; set; }
     }
 }

@@ -8,3 +8,4 @@ D:\project\ConvertDataKienGiang\ConvertDataKienGiang\obj\Debug\ConvertDataKienGi
 D:\project\ConvertDataKienGiang\ConvertDataKienGiang\obj\Debug\ConvertDataKienGiang.csproj.CopyComplete
 D:\project\ConvertDataKienGiang\ConvertDataKienGiang\obj\Debug\ConvertDataKienGiang.exe
 D:\project\ConvertDataKienGiang\ConvertDataKienGiang\obj\Debug\ConvertDataKienGiang.pdb
+D:\project\ConvertDataKienGiang\ConvertDataKienGiang\obj\Debug\ConvertDataKienGiang.csproj.SuggestedBindingRedirects.cache

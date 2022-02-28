@@ -33,12 +33,20 @@ namespace ConvertDataKienGiang
 
             //insertContractAction.InsertContract();
 
-            // insert clock record
-            InsertClockRecordAction insertClockRecordAction = new InsertClockRecordAction();
+            //// insert clock record
+            //InsertClockRecordAction insertClockRecordAction = new InsertClockRecordAction();
 
-            insertClockRecordAction.InsertClockRecord(2021, 12);
-            insertClockRecordAction.InsertClockRecord(2021, 11);
-            insertClockRecordAction.InsertClockRecord(2021, 10);
+            //insertClockRecordAction.InsertClockRecord(2021, 12);
+            //insertClockRecordAction.InsertClockRecord(2021, 11);
+            //insertClockRecordAction.InsertClockRecord(2021, 10);
+
+            //// update address for consumer
+            //UpdateAddressKHACtion updateAddressKHACtion = new UpdateAddressKHACtion();
+            //updateAddressKHACtion.UpdateAddressKH();
+
+            // update sdb for consumer
+            UpdateSDBKHAction updateSDBKHAction = new UpdateSDBKHAction();
+            updateSDBKHAction.UpdateSDBKH();
         }
     }
 }

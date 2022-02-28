@@ -1,5 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="EOSKG_WebAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DUONGPHO">
+    <Key>
+      <PropertyRef Name="MADP" />
+      <PropertyRef Name="DUONGPHU" />
+    </Key>
+    <Property Name="MADP" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="DUONGPHU" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="TENDP" Type="nvarchar" MaxLength="200" />
+    <Property Name="TENHD" Type="nvarchar" MaxLength="200" />
+    <Property Name="MAKV" Type="varchar" MaxLength="10" />
+    <Property Name="MAPHUONG" Type="varchar" MaxLength="4" />
+    <Property Name="TENPHUONG" Type="nvarchar" MaxLength="200" />
+  </EntityType>
   <EntityType Name="KHACHHANG">
     <Key>
       <PropertyRef Name="IDKH" />
@@ -56,6 +69,28 @@
     <Property Name="SORT" Type="varchar" MaxLength="2" />
     <Property Name="NGAYHETHANDH" Type="datetime" />
     <Property Name="MAVUNG" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="KHUVUC">
+    <Key>
+      <PropertyRef Name="MAKV" />
+    </Key>
+    <Property Name="MAKV" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TENKV" Type="nvarchar" MaxLength="100" />
+    <Property Name="THUTU" Type="int" />
+    <Property Name="HIENTHI" Type="bit" />
+    <Property Name="NHOMKV" Type="int" />
+    <Property Name="HSVATTU" Type="decimal" Precision="18" Scale="8" />
+    <Property Name="HSNC" Type="decimal" Precision="18" Scale="8" />
+    <Property Name="MAHD" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="PHUONG">
+    <Key>
+      <PropertyRef Name="MAPHUONG" />
+    </Key>
+    <Property Name="MAPHUONG" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="TENPHUONG" Type="nvarchar" MaxLength="50" />
+    <Property Name="MAKV" Type="varchar" MaxLength="10" />
+    <Property Name="THUTUIN" Type="int" />
   </EntityType>
   <EntityType Name="TIEUTHU">
     <Key>
@@ -157,6 +192,94 @@
     <Property Name="ISPHATSINH_HDDIENTU" Type="bit" />
     <Property Name="ISGIATN" Type="bit" />
   </EntityType>
+  <Association Name="FK_DUONGPHO_DUONGPHO">
+    <End Role="PHUONG" Type="Self.PHUONG" Multiplicity="0..1" />
+    <End Role="DUONGPHO" Type="Self.DUONGPHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHUONG">
+        <PropertyRef Name="MAPHUONG" />
+      </Principal>
+      <Dependent Role="DUONGPHO">
+        <PropertyRef Name="MAPHUONG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DUONGPHO_KHUVUC">
+    <End Role="KHUVUC" Type="Self.KHUVUC" Multiplicity="0..1" />
+    <End Role="DUONGPHO" Type="Self.DUONGPHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUVUC">
+        <PropertyRef Name="MAKV" />
+      </Principal>
+      <Dependent Role="DUONGPHO">
+        <PropertyRef Name="MAKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHACHHANG_DUONGPHO">
+    <End Role="DUONGPHO" Type="Self.DUONGPHO" Multiplicity="0..1" />
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DUONGPHO">
+        <PropertyRef Name="MADP" />
+        <PropertyRef Name="DUONGPHU" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="MADP" />
+        <PropertyRef Name="DUONGPHU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHACHHANG_KHUVUC">
+    <End Role="KHUVUC" Type="Self.KHUVUC" Multiplicity="0..1" />
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUVUC">
+        <PropertyRef Name="MAKV" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="MAKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHACHHANG_PHUONG">
+    <End Role="PHUONG" Type="Self.PHUONG" Multiplicity="0..1" />
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHUONG">
+        <PropertyRef Name="MAPHUONG" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="MAPHUONG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PHUONG_KHUVUC">
+    <End Role="KHUVUC" Type="Self.KHUVUC" Multiplicity="0..1" />
+    <End Role="PHUONG" Type="Self.PHUONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUVUC">
+        <PropertyRef Name="MAKV" />
+      </Principal>
+      <Dependent Role="PHUONG">
+        <PropertyRef Name="MAKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TIEUTHU_DUONGPHO">
+    <End Role="DUONGPHO" Type="Self.DUONGPHO" Multiplicity="1" />
+    <End Role="TIEUTHU" Type="Self.TIEUTHU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DUONGPHO">
+        <PropertyRef Name="MADP" />
+        <PropertyRef Name="DUONGPHU" />
+      </Principal>
+      <Dependent Role="TIEUTHU">
+        <PropertyRef Name="MADP" />
+        <PropertyRef Name="DUONGPHU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TIEUTHU_KHACHHANG">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
     <End Role="TIEUTHU" Type="Self.TIEUTHU" Multiplicity="*" />
@@ -169,11 +292,58 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TIEUTHU_KHUVUC">
+    <End Role="KHUVUC" Type="Self.KHUVUC" Multiplicity="1" />
+    <End Role="TIEUTHU" Type="Self.TIEUTHU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUVUC">
+        <PropertyRef Name="MAKV" />
+      </Principal>
+      <Dependent Role="TIEUTHU">
+        <PropertyRef Name="MAKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="EOSKG_WebAppModelStoreContainer">
+    <EntitySet Name="DUONGPHO" EntityType="Self.DUONGPHO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHUVUC" EntityType="Self.KHUVUC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHUONG" EntityType="Self.PHUONG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TIEUTHU" EntityType="Self.TIEUTHU" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DUONGPHO_DUONGPHO" Association="Self.FK_DUONGPHO_DUONGPHO">
+      <End Role="PHUONG" EntitySet="PHUONG" />
+      <End Role="DUONGPHO" EntitySet="DUONGPHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DUONGPHO_KHUVUC" Association="Self.FK_DUONGPHO_KHUVUC">
+      <End Role="KHUVUC" EntitySet="KHUVUC" />
+      <End Role="DUONGPHO" EntitySet="DUONGPHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACHHANG_DUONGPHO" Association="Self.FK_KHACHHANG_DUONGPHO">
+      <End Role="DUONGPHO" EntitySet="DUONGPHO" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACHHANG_KHUVUC" Association="Self.FK_KHACHHANG_KHUVUC">
+      <End Role="KHUVUC" EntitySet="KHUVUC" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACHHANG_PHUONG" Association="Self.FK_KHACHHANG_PHUONG">
+      <End Role="PHUONG" EntitySet="PHUONG" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PHUONG_KHUVUC" Association="Self.FK_PHUONG_KHUVUC">
+      <End Role="KHUVUC" EntitySet="KHUVUC" />
+      <End Role="PHUONG" EntitySet="PHUONG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TIEUTHU_DUONGPHO" Association="Self.FK_TIEUTHU_DUONGPHO">
+      <End Role="DUONGPHO" EntitySet="DUONGPHO" />
+      <End Role="TIEUTHU" EntitySet="TIEUTHU" />
+    </AssociationSet>
     <AssociationSet Name="FK_TIEUTHU_KHACHHANG" Association="Self.FK_TIEUTHU_KHACHHANG">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="TIEUTHU" EntitySet="TIEUTHU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TIEUTHU_KHUVUC" Association="Self.FK_TIEUTHU_KHUVUC">
+      <End Role="KHUVUC" EntitySet="KHUVUC" />
       <End Role="TIEUTHU" EntitySet="TIEUTHU" />
     </AssociationSet>
   </EntityContainer>

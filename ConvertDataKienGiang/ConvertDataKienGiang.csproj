@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Action\UpdateAddressKHACtion.cs" />
     <Compile Include="Action\GetListKHAction.cs" />
     <Compile Include="Action\GetListTieuThuAction.cs" />
     <Compile Include="Action\InsertClockRecordAction.cs" />
@@ -57,6 +58,10 @@
     <Compile Include="Action\InsertContractAction.cs" />
     <Compile Include="Action\InsertDataKGRecordAction.cs" />
     <Compile Include="Action\InsertMeterAction.cs" />
+    <Compile Include="Action\UpdateSDBKHAction.cs" />
+    <Compile Include="DUONGPHO.cs">
+      <DependentUpon>KGData.tt</DependentUpon>
+    </Compile>
     <Compile Include="KGClock.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,6 +93,12 @@
       <DependentUpon>KGData.edmx</DependentUpon>
     </Compile>
     <Compile Include="KHACHHANG.cs">
+      <DependentUpon>KGData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KHUVUC.cs">
+      <DependentUpon>KGData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PHUONG.cs">
       <DependentUpon>KGData.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

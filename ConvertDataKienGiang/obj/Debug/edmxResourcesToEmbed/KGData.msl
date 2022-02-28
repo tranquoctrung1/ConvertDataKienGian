@@ -158,5 +158,42 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DUONGPHOes">
+      <EntityTypeMapping TypeName="EOSKG_WebAppModel.DUONGPHO">
+        <MappingFragment StoreEntitySet="DUONGPHO">
+          <ScalarProperty Name="TENPHUONG" ColumnName="TENPHUONG" />
+          <ScalarProperty Name="MAPHUONG" ColumnName="MAPHUONG" />
+          <ScalarProperty Name="MAKV" ColumnName="MAKV" />
+          <ScalarProperty Name="TENHD" ColumnName="TENHD" />
+          <ScalarProperty Name="TENDP" ColumnName="TENDP" />
+          <ScalarProperty Name="DUONGPHU" ColumnName="DUONGPHU" />
+          <ScalarProperty Name="MADP" ColumnName="MADP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHUVUCs">
+      <EntityTypeMapping TypeName="EOSKG_WebAppModel.KHUVUC">
+        <MappingFragment StoreEntitySet="KHUVUC">
+          <ScalarProperty Name="MAHD" ColumnName="MAHD" />
+          <ScalarProperty Name="HSNC" ColumnName="HSNC" />
+          <ScalarProperty Name="HSVATTU" ColumnName="HSVATTU" />
+          <ScalarProperty Name="NHOMKV" ColumnName="NHOMKV" />
+          <ScalarProperty Name="HIENTHI" ColumnName="HIENTHI" />
+          <ScalarProperty Name="THUTU" ColumnName="THUTU" />
+          <ScalarProperty Name="TENKV" ColumnName="TENKV" />
+          <ScalarProperty Name="MAKV" ColumnName="MAKV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHUONGs">
+      <EntityTypeMapping TypeName="EOSKG_WebAppModel.PHUONG">
+        <MappingFragment StoreEntitySet="PHUONG">
+          <ScalarProperty Name="THUTUIN" ColumnName="THUTUIN" />
+          <ScalarProperty Name="MAKV" ColumnName="MAKV" />
+          <ScalarProperty Name="TENPHUONG" ColumnName="TENPHUONG" />
+          <ScalarProperty Name="MAPHUONG" ColumnName="MAPHUONG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
