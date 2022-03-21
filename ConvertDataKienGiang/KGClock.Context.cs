@@ -22,6 +22,7 @@ namespace ConvertDataKienGiang
         public KG_ClockRecordEntities()
             : base("name=KG_ClockRecordEntities")
         {
+            ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 0;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

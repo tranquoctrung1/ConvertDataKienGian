@@ -18,6 +18,7 @@ namespace ConvertDataKienGiang
         public EOSKG_WebAppEntities()
             : base("name=EOSKG_WebAppEntities")
         {
+            ((IObjectContextAdapter)this).ObjectContext.CommandTimeout = 0;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

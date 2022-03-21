@@ -30,39 +30,50 @@ namespace ConvertDataKienGiang.Action
                                     }
                                     ).ToList();
 
-                    cr.ContractID = contract.FirstOrDefault().ContractID;
+                    if(contract.Count > 0)
+                    {
+                        cr.ContractID = contract.FirstOrDefault().ContractID;
+
+                    }
+
                 }
 
-                cr.Period = new DateTime(year, month, 1, 0, 0, 0);
-                if(tt.CHISODAU != null)
+                if(cr.ContractID != null)
                 {
-                    cr.FirstNumber = long.Parse(tt.CHISODAU.ToString());
-                }
-                else
-                {
-                    cr.FirstNumber = null;
-                }
-                if(tt.CHISOCUOI != null)
-                {
-                    cr.LastNumber = long.Parse(tt.CHISOCUOI.ToString());
-                }
-                else
-                {
-                    cr.LastNumber = null;
-                }
-                cr.FirstDate = tt.NGAYNHAP_CS;
-                cr.User_Input = "";
-                cr.UsageNumber = 0;
-                cr.InputTime = 1;
+                    cr.Period = new DateTime(year, month, 1, 0, 0, 0);
+                    if (tt.CHISODAU != null)
+                    {
+                        cr.FirstNumber = long.Parse(tt.CHISODAU.ToString());
+                    }
+                    else
+                    {
+                        cr.FirstNumber = null;
+                    }
+                    if (tt.CHISOCUOI != null)
+                    {
+                        cr.LastNumber = long.Parse(tt.CHISOCUOI.ToString());
+                    }
+                    else
+                    {
+                        cr.LastNumber = null;
+                    }
+                    cr.FirstDate = tt.NGAYNHAP_CS;
+                    cr.User_Input = "";
+                    cr.UsageNumber = 0;
+                    cr.InputTime = 1;
+                    cr.StatusLockBook = 0;
 
-                cr.LockedStatus = false;
-                cr.BookId = 4;
+                    cr.LockedStatus = false;
+                    cr.BookId = 4;
 
-                using(var db = new KG_ClockRecordEntities())
-                {
-                    db.tbl_ClockRecord.Add(cr);
-                    db.SaveChanges();
+                    using (var db = new KG_ClockRecordEntities())
+                    {
+                        db.tbl_ClockRecord.Add(cr);
+                        db.SaveChanges();
+                    }
                 }
+
+                
             }
         }
     }
